@@ -1,11 +1,21 @@
-module.exports = {
-  clearMocks: true,
-  moduleFileExtensions: ['js', 'ts'],
+const jestConfig = {
+  preset: 'ts-jest',
+  displayName: 'node',
+  testMatch: ['**/test/**/*.ts'],
+  testPathIgnorePatterns: ['/node_modules/', 'setup.ts'],
   testEnvironment: 'node',
-  testMatch: ['**/*.test.ts'],
-  testRunner: 'jest-circus/runner',
-  transform: {
-    '^.+\\.ts$': 'ts-jest'
+  testTimeout: 10000,
+  collectCoverage: false,
+  coverageReporters: ['text-summary', 'html', 'lcov'],
+  coverageThreshold: {
+    global: {
+      branches: 40,
+      functions: 40,
+      statements: 40,
+      lines: 40,
+    },
   },
-  verbose: true
 }
+
+module.exports = jestConfig
+

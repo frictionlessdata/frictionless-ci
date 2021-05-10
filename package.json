@@ -1,29 +1,30 @@
 {
-  "name": "container-toolkit-template",
-  "version": "0.0.0",
-  "description": "Container template action using actions/toolkit",
+  "name": "frictionless-repository",
+  "version": "1.0.0",
+  "description": "Continious data validation",
   "main": "lib/main.js",
   "scripts": {
-    "build": "tsc",
-    "format": "prettier --write **/*.ts",
-    "test": "jest"
+    "build": "npm run compile",
+    "compile": "rm -rf lib && tsc",
+    "format": "prettier --write 'src/**/*.ts*' && eslint --fix 'src/**/*.ts*'",
+    "lint": "prettier --check 'src/**/*.ts*' && eslint 'src/**/*.ts*'",
+    "pretest": "npm run lint",
+    "test": "jest --coverage",
+    "update": "ncu -u"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/container-toolkit-template.git"
+    "url": "git+https://github.com/frictionlessdata/repository.git"
   },
   "keywords": [
-    "actions",
-    "container",
-    "toolkit",
-    "setup"
+    "frictionless"
   ],
-  "author": "GitHub",
-  "license": "ISC",
+  "author": "Evgeny Karev",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/actions/container-toolkit-template/issues"
+    "url": "https://github.com/frictionlessdata/repository/issues"
   },
-  "homepage": "https://github.com/actions/container-toolkit-template#readme",
+  "homepage": "https://github.com/frictionlessdata/repository#readme",
   "dependencies": {
     "@actions/core": "^1.0.0",
     "@actions/io": "^1.0.0",
@@ -32,12 +33,22 @@
     "@actions/tool-cache": "^1.0.0"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.13",
-    "@types/node": "^12.0.4",
-    "jest": "^24.8.0",
-    "jest-circus": "^24.7.1",
-    "prettier": "^1.17.1",
-    "ts-jest": "^24.0.2",
-    "typescript": "^3.5.1"
+    "@types/jest": "^26.0.20",
+    "@types/node": "^14.14.22",
+    "@typescript-eslint/eslint-plugin": "^4.14.0",
+    "@typescript-eslint/parser": "^4.14.0",
+    "eslint": "^7.18.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.1.0",
+    "husky": "^4.3.8",
+    "jest": "^26.6.3",
+    "npm-check-updates": "^11.0.2",
+    "prettier": "^2.2.1",
+    "ts-jest": "^26.4.4",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
   }
 }
