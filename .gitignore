@@ -52,6 +52,6 @@ package-lock.json
 assets/
 static/
 dist/
-lib/
+# lib/
 tmp/
 .vim

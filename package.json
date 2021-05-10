@@ -1,6 +1,6 @@
 {
   "name": "frictionless-repository",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Continious data validation",
   "main": "lib/main.js",
   "scripts": {
