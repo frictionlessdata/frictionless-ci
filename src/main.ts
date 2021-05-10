@@ -40,7 +40,7 @@ async function main() {
   const artifactClient = artifact.create()
   const options: artifact.UploadOptions = {
     continueOnError: false,
-    retentionDays: 365,
+    retentionDays: 90,
   }
   const uploadResponse = await artifactClient.uploadArtifact(
     'report',
