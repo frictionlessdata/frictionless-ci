@@ -32,13 +32,13 @@ jobs:
 
   # Validate
 
-  validate:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Validate data
-        uses: frictionlessdata/repository@v0.1.0
-        with:
-          who-to-greet: 'Frictionless'
+  # validate:
+    # runs-on: ubuntu-latest
+    # steps:
+      # - name: Validate data
+        # uses: frictionlessdata/repository@v0.1.0
+        # with:
+          # who-to-greet: 'Frictionless'
 
   # Deploy
 
