@@ -82,6 +82,6 @@ jobs:
     needs: [release]
     steps:
       - name: Validate data
-        uses: frictionlessdata/repository@v0.1.4
+        uses: frictionlessdata/repository@v0.1.5
         with:
           who-to-greet: 'Frictionless'
