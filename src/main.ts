@@ -35,7 +35,7 @@ async function main() {
   const promExec = util.promisify(exec)
   const { stdout } = await promExec('frictionless validate inquiry.json --json')
   const report: IDict = JSON.parse(stdout)
-  if (!report.valid) core.setFailed('Data alidation has failed')
+  if (!report.valid) core.setFailed('Data validation has failed')
   await fs.promises.writeFile('report.json', stdout)
 
   // Upload report
