@@ -1,0 +1,3 @@
+tasks:
+  - source: data/valid.csv
+  # - source: data/invalid.csv
