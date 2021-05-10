@@ -30,6 +30,16 @@ jobs:
       - name: Report coverage
         uses: codecov/codecov-action@v1.4.1
 
+  # Validate
+
+  # validate:
+    # runs-on: ubuntu-latest
+    # steps:
+      # - name: Validate data
+        # uses: frictionlessdata/repositoryn@v0.1.0
+        # with:
+          # who-to-greet: 'Frictionless'
+
   # Deploy
 
   # deploy:
@@ -70,10 +80,6 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - name: Install dependencies
         run: npm install
-      - name: Release to NPM
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Release to GitHub
         uses: softprops/action-gh-release@v1
         env:
