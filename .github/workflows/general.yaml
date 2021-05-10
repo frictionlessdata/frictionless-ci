@@ -35,10 +35,12 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
       - name: Validate data
         uses: frictionlessdata/repository@v0.1.5
         with:
-          who-to-greet: 'Frictionless'
+          myInput: 'Frictionless'
 
   # Deploy
 
