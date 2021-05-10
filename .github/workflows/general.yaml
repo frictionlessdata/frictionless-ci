@@ -79,8 +79,9 @@ jobs:
 
   validate:
     runs-on: ubuntu-latest
+    needs: [release]
     steps:
       - name: Validate data
-        uses: frictionlessdata/repository@v0.1.2
+        uses: frictionlessdata/repository@v0.1.3
         with:
           who-to-greet: 'Frictionless'
