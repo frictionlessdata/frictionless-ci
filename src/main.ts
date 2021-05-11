@@ -8,6 +8,7 @@ import * as artifact from '@actions/artifact'
 import { IDict } from './common'
 
 async function main() {
+  // TODO: handle errors
   process.chdir('/github/workspace')
 
   // Load inquiry
