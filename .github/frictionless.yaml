@@ -1,3 +1,4 @@
-tasks:
-  - source: data/valid.csv
-  # - source: data/invalid.csv
+main:
+  tasks:
+    - source: data/valid.csv
+    # - source: data/invalid.csv

@@ -15,8 +15,10 @@ async function main() {
   try {
     const path = '.github/frictionless.yaml'
     const file = await fs.promises.readFile(path, 'utf-8')
-    // TODO: validate inquiry
-    inquiry = yaml.load(file) as IDict
+    const config = yaml.load(file) as IDict
+    // TODO: validate config being a dict
+    const key = core.getInput('inquiry')
+    inquiry = config[key]
     if (!inquiry) throw new Error('no inquiry')
   } catch {
     const paths = await globby(['**/*.{csv,tsv,xls,xlsx}'])
