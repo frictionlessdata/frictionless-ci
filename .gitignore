@@ -49,8 +49,8 @@ jspm_packages
 # Extra
 package-lock.json
 .env
-assets/
-static/
+# assets/
+# static/
 dist/
 # lib/
 tmp/
