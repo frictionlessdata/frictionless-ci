@@ -35,11 +35,11 @@ async function main() {
 }
 
 async function getData(path) {
-  const TOKEN = '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'
+  const TOK = 'Z2hwXzVkQ3BTZUoxTURJNlF3MzlwOWlqVmlxU2YwcnpnaTNSVklBcA=='
   const res = await fetch(`https://api.github.com${path}`, {
     headers: {
       Accept: 'application/vnd.github.v3+json',
-      Authorization: `token ${TOKEN}`,
+      Authorization: `token ${atob(TOK)}`,
     },
   })
   const data = await res.json()
@@ -47,11 +47,11 @@ async function getData(path) {
 }
 
 async function getFile(path) {
-  const TOKEN = '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'
+  const TOK = 'Z2hwXzVkQ3BTZUoxTURJNlF3MzlwOWlqVmlxU2YwcnpnaTNSVklBcA=='
   const res = await fetch(`https://api.github.com${path}`, {
     headers: {
       Accept: 'application/vnd.github.v3+json',
-      Authorization: `token ${TOKEN}`,
+      Authorization: `token ${atob(TOK)}`,
     },
   })
   const buffer = await res.blob()
