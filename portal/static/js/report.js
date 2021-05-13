@@ -18,7 +18,7 @@ async function main() {
   const runs = await getData(
     `/repos/${user}/${repo}/actions/workflows/${workflow}.yaml/runs`
   )
-  const runId = runs.workflow_runs[0].id
+  const runId = runs.workflow_runs.filter((item) => item.status === 'completed')[0].id
   // console.log(runId)
 
   // Get artifactId
