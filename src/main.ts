@@ -60,7 +60,7 @@ async function main() {
 
   // Notify user
   const [user, repo] = process.env.GITHUB_REPOSITORY!.split('/')
-  const workflow = process.env.WORKFLOW
+  const workflow = process.env.GITHUB_WORKFLOW
   const link = `https://repository.frictionlessdata.io/report/?user=${user}&repo=${repo}&workflow=${workflow}`
   if (report.valid) {
     core.setFailed(`Data validation has failed: ${link}`)
