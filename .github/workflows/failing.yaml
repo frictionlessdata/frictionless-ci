@@ -1,4 +1,4 @@
-name: frictionless
+name: failing
 
 on:
   push:
