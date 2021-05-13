@@ -38,7 +38,6 @@ async function main() {
   const promExec = util.promisify(exec)
   const { stdout } = await promExec('frictionless validate inquiry.json --json')
   const report: IDict = JSON.parse(stdout)
-  if (!report.valid) core.setFailed('Data validation has failed')
   await fs.promises.writeFile('report.json', stdout)
 
   // Upload report
@@ -57,8 +56,16 @@ async function main() {
     core.setFailed(
       `An error was encountered when uploading ${uploadResponse.artifactName}. There were ${uploadResponse.failedItems.length} items that failed to upload.`
     )
+  }
+
+  // Notify user
+  const [user, repo] = process.env.GITHUB_REPOSITORY!.split('/')
+  const workflow = process.env.WORKFLOW
+  const link = `https://repository.frictionlessdata.io/report/?user=${user}&repo=${repo}&workflow=${workflow}`
+  if (report.valid) {
+    core.setFailed(`Data validation has failed: ${link}`)
   } else {
-    core.info(`Artifact ${uploadResponse.artifactName} has been successfully uploaded!`)
+    core.info(`Data validation has passed: ${link}`)
   }
 }
 
