@@ -1,4 +1,4 @@
 # Frictionless Repository
 
-[![Frictionless](https://img.shields.io/github/workflow/status/frictionlessdata/repository/passing?label=frictionless)](https://repository.frictionlessdata.io/report?user=frictionlessdata&repo=repository&workflow=passing)
-[![Frictionless](https://img.shields.io/github/workflow/status/frictionlessdata/repository/failing?label=frictionless)](https://repository.frictionlessdata.io/report?user=frictionlessdata&repo=repository&workflow=failing)
+[![Frictionless](https://github.com/frictionlessdata/repository/actions/workflows/passing.yaml/badge.svg)](https://repository.frictionlessdata.io/report?user=frictionlessdata&repo=repository&workflow=passing)
+[![Frictionless](https://github.com/frictionlessdata/repository/actions/workflows/failing.yaml/badge.svg)](https://repository.frictionlessdata.io/report?user=frictionlessdata&repo=repository&workflow=failing)
