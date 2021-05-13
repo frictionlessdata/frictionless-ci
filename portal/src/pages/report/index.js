@@ -16,7 +16,14 @@ function Report() {
         <script src="//unpkg.com/frictionless-components@0.1.14/dist/frictionless-components.js"></script>
       </Head>
       <div className="container margin-vert--lg">
-        <h1>frictionlessdata/repository</h1>
+        <form action="" method="GET">
+          <div>
+            <input name="user" id="user" placeholder="user" />
+            <input name="repo" id="repo" placeholder="repo" />
+            <input name="workflow" id="workflow" placeholder="workflow" />
+            <button>Show</button>
+          </div>
+        </form>
         <div id="report"></div>
       </div>
       <Safe.script src={useBaseUrl('js/report.js')}></Safe.script>
