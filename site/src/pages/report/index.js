@@ -1,8 +1,7 @@
 import React from 'react'
+import Safe from 'react-safe'
 import Layout from '@theme/Layout'
 import Head from '@docusaurus/Head'
-import useBaseUrl from '@docusaurus/useBaseUrl'
-import Safe from 'react-safe'
 
 function Report() {
   return (
@@ -18,42 +17,22 @@ function Report() {
           rel="stylesheet"
           href="//unpkg.com/frictionless-components/dist/frictionless-components.css"
         />
-        <script src="https://unpkg.com/jszip/dist/jszip.js"></script>
         <script src="//unpkg.com/frictionless-components/dist/frictionless-components.js"></script>
       </Head>
-      <div className="container margin-vert--lg">
-        <form
-          style={{
-            paddingBottom: '30px',
-            borderBottom: 'solid 1px #ddd',
-            marginBottom: '15px',
-          }}
-        >
-          <div className="form-row">
-            <div class="col">
-              <input name="user" id="user" placeholder="user" className="form-control" />
-            </div>
-            <div class="col">
-              <input name="repo" id="repo" placeholder="repo" className="form-control" />
-            </div>
-            <div class="col">
-              <input
-                name="workflow"
-                id="workflow"
-                placeholder="workflow"
-                className="form-control"
-              />
-            </div>
-            <div class="col">
-              <button className="btn btn-primary" style={{ width: '100%' }}>
-                Show
-              </button>
-            </div>
-          </div>
-        </form>
-        <div id="report"></div>
+      <div class="cotainer margin-vert--lg">
+        <div id="workflow"></div>
+        <Safe.script>{`
+          const tok = 'Z2hwXzVkQ3BTZUoxTURJNlF3MzlwOWlqVmlxU2YwcnpnaTNSVklBcA=='
+          const params = new URLSearchParams(window.location.search)
+          const user = params.get('user')
+          const repo = params.get('repo')
+          const workflow = params.get('workflow')
+          const run = params.get('run')
+          const element = document.getElementById('workflow')
+          const props = { user, repo, workflow, run, token: atob(tok) }
+          frictionlessComponents.render(frictionlessComponents.Workflow, props, element)
+        `}</Safe.script>
       </div>
-      <Safe.script src={useBaseUrl('js/report.js')}></Safe.script>
     </Layout>
   )
 }
