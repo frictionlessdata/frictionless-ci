@@ -22,15 +22,26 @@ function Report() {
       <div class="cotainer margin-vert--lg">
         <div id="workflow"></div>
         <Safe.script>{`
-          const tok = 'Z2hwXzVkQ3BTZUoxTURJNlF3MzlwOWlqVmlxU2YwcnpnaTNSVklBcA=='
-          const params = new URLSearchParams(window.location.search)
-          const user = params.get('user')
-          const repo = params.get('repo')
-          const workflow = params.get('workflow')
-          const run = params.get('run')
-          const element = document.getElementById('workflow')
-          const props = { user, repo, workflow, run, token: atob(tok) }
-          frictionlessComponents.render(frictionlessComponents.Workflow, props, element)
+          window.addEventListener("load", function(){
+            const value = 'Z2hwXzVkQ3BTZUoxTURJNlF3MzlwOWlqVmlxU2YwcnpnaTNSVklBcA=='
+            const params = new URLSearchParams(window.location.search)
+            const user = params.get('user')
+            const repo = params.get('repo')
+            const workflow = params.get('workflow')
+            const run = params.get('run')
+            const callback = (error, {user, repo, workflow, run}) => {
+              const params = new URLSearchParams(location.search)
+              params.set('user', user)
+              params.set('repo', repo)
+              params.set('workflow', workflow)
+              if (run) params.set('run', run)
+              const url = location.pathname + '?' + params.toString()
+              window.history.replaceState({}, '',  url)
+            }
+            const element = document.getElementById('workflow')
+            const props = { token: atob(value), user, repo, workflow, run, callback }
+            frictionlessComponents.render(frictionlessComponents.Workflow, props, element)
+          })
         `}</Safe.script>
       </div>
     </Layout>
