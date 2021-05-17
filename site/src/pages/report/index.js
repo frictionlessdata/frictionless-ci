@@ -27,19 +27,19 @@ function Report() {
             const params = new URLSearchParams(window.location.search)
             const user = params.get('user')
             const repo = params.get('repo')
-            const workflow = params.get('workflow')
+            const flow = params.get('flow')
             const run = params.get('run')
-            const callback = (error, {user, repo, workflow, run}) => {
+            const callback = (error, {user, repo, flow, run}) => {
               const params = new URLSearchParams(location.search)
               params.set('user', user)
               params.set('repo', repo)
-              params.set('workflow', workflow)
+              params.set('flow', flow)
               if (run) params.set('run', run)
               const url = location.pathname + '?' + params.toString()
               window.history.replaceState({}, '',  url)
             }
             const element = document.getElementById('workflow')
-            const props = { token: atob(value), user, repo, workflow, run, callback }
+            const props = { token: atob(value), user, repo, flow, run, callback }
             frictionlessComponents.render(frictionlessComponents.Workflow, props, element)
           })
         `}</Safe.script>
