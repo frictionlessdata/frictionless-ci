@@ -1,5 +1,4 @@
 import React from 'react'
-import Safe from 'react-safe'
 import Layout from '@theme/Layout'
 import Head from '@docusaurus/Head'
 
@@ -15,14 +14,12 @@ function Report() {
         />
         <link
           rel="stylesheet"
-          href="//unpkg.com/frictionless-components/dist/frictionless-components.css"
+          href="https://unpkg.com/frictionless-components/dist/frictionless-components.css"
         />
-        <script src="//unpkg.com/frictionless-components/dist/frictionless-components.js"></script>
-      </Head>
-      <div class="cotainer margin-vert--lg">
-        <div id="workflow"></div>
-        <Safe.script>{`
-          window.addEventListener("load", function(){
+        <script src="https://unpkg.com/frictionless-components/dist/frictionless-components.js"></script>
+        <script>{`
+          if (document.readyState === 'complete') location.reload()
+          if (document.readyState === 'loading') window.addEventListener("load", () => {
             const value = 'Z2hwXzVkQ3BTZUoxTURJNlF3MzlwOWlqVmlxU2YwcnpnaTNSVklBcA=='
             const params = new URLSearchParams(window.location.search)
             const user = params.get('user')
@@ -42,7 +39,10 @@ function Report() {
             const props = { token: atob(value), user, repo, flow, run, callback }
             frictionlessComponents.render(frictionlessComponents.Workflow, props, element)
           })
-        `}</Safe.script>
+        `}</script>
+      </Head>
+      <div class="cotainer margin-vert--lg">
+        <div id="workflow"></div>
       </div>
     </Layout>
   )
