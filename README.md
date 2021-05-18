@@ -1,7 +1,8 @@
 # Frictionless Repository
 
-[![Frictionless](https://github.com/frictionlessdata/repository/actions/workflows/frictionless.yaml/badge.svg)](https://repository.frictionlessdata.io/report?user=frictionlessdata&repo=repository&flow=frictionless)
-[![Experimental](https://github.com/frictionlessdata/repository/actions/workflows/experimental.yaml/badge.svg)](https://repository.frictionlessdata.io/report?user=frictionlessdata&repo=repository&flow=experimental)
+[![Build](https://img.shields.io/github/workflow/status/frictionlessdata/repository/general/main)](https://github.com/frictionlessdata/repository/actions)
+[![Codebase](https://img.shields.io/badge/github-main-brightgreen)](https://github.com/frictionlessdata/repository)
+[![Support](https://img.shields.io/badge/chat-discord-brightgreen)](https://discord.com/channels/695635777199145130/695635777199145133)
 
 Frictionless is a Github Action for continuous data validation of your repository.
 
