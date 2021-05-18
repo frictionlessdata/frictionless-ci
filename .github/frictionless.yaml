@@ -1,8 +1,8 @@
-passing:
+main:
   tasks:
     - source: data/valid.csv
 
-failing:
+extra:
   tasks:
     - source: data/valid.csv
     - source: data/invalid.csv
