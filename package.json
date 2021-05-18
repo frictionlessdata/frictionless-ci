@@ -3,9 +3,11 @@
   "version": "0.1.7",
   "description": "Continious data validation",
   "main": "lib/main.js",
+  "type": "module",
   "scripts": {
     "format": "prettier --write 'lib/**/*.js*' && eslint --fix 'lib/**/*.js*'",
     "lint": "prettier --check 'lib/**/*.js*' && eslint 'lib/**/*.js*'",
+    "prepare": "husky install",
     "pretest": "npm run lint",
     "test": "jest --coverage",
     "update": "ncu -u"
