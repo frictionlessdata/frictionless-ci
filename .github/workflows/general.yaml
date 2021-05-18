@@ -64,13 +64,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: Install Node
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14
-          registry-url: https://registry.npmjs.org/
-      - name: Install dependencies
-        run: npm install
       - name: Release to GitHub
         uses: softprops/action-gh-release@v1
         env:
