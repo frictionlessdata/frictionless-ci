@@ -1,8 +1,6 @@
 const jestConfig = {
-  preset: 'ts-jest',
   displayName: 'node',
-  testMatch: ['**/test/**/*.ts'],
-  testPathIgnorePatterns: ['/node_modules/', 'setup.ts'],
+  testMatch: ['**/test/**/*.js'],
   testEnvironment: 'node',
   testTimeout: 10000,
   collectCoverage: false,
@@ -18,4 +16,3 @@ const jestConfig = {
 }
 
 module.exports = jestConfig
-

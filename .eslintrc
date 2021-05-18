@@ -1,12 +1,8 @@
 {
-  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "sourceType": "module",
     "ecmaFeatures": { "jsx": true }
   },
-  "plugins": [
-    "@typescript-eslint/eslint-plugin"
-  ],
   "extends": [
     "standard",
   ],
@@ -26,10 +22,6 @@
     "comma-dangle": ["error", {
       "arrays": "always-multiline",
       "objects": "always-multiline"
-    }],
-    "@typescript-eslint/no-unused-vars": ["error", {
-      "argsIgnorePattern": "^_",
-      "varsIgnorePattern": "^_"
     }]
   }
 }
