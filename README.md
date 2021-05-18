@@ -1,6 +1,7 @@
 # Frictionless Repository
 
 [![Build](https://img.shields.io/github/workflow/status/frictionlessdata/repository/general/main)](https://github.com/frictionlessdata/repository/actions)
+[![Registry](https://img.shields.io/github/v/release/frictionlessdata/repository)](https://github.com/frictionlessdata/repository/releases)
 [![Codebase](https://img.shields.io/badge/github-main-brightgreen)](https://github.com/frictionlessdata/repository)
 [![Support](https://img.shields.io/badge/chat-discord-brightgreen)](https://discord.com/channels/695635777199145130/695635777199145133)
 
