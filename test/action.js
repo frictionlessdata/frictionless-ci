@@ -1,5 +1,5 @@
 import { dir } from 'tmp-promise'
-import { action } from '../lib/action.js'
+import { action } from '../lib'
 
 // General
 
