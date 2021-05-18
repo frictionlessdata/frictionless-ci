@@ -2,14 +2,15 @@
   "name": "frictionless-repository",
   "version": "0.5.0",
   "description": "Continious data validation",
-  "main": "lib/main.js",
+  "main": "lib/index.js",
   "type": "module",
   "scripts": {
+    "coverage": "sensible-browser coverage/index.html",
     "format": "prettier --write 'lib/**/*.js*' && eslint --fix 'lib/**/*.js*'",
     "lint": "prettier --check 'lib/**/*.js*' && eslint 'lib/**/*.js*'",
     "prepare": "husky install",
     "pretest": "npm run lint",
-    "test": "jest --coverage",
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest --coverage",
     "update": "ncu -u"
   },
   "repository": {
@@ -49,6 +50,7 @@
     "jszip": "^3.6.0",
     "node-fetch": "^2.6.1",
     "npm-check-updates": "^11.5.13",
-    "prettier": "^2.3.0"
+    "prettier": "^2.3.0",
+    "tmp-promise": "^3.0.2"
   }
 }

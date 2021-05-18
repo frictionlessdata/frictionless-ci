@@ -7,10 +7,10 @@ const jestConfig = {
   coverageReporters: ['text-summary', 'html', 'lcov'],
   coverageThreshold: {
     global: {
-      branches: 40,
-      functions: 40,
-      statements: 40,
-      lines: 40,
+      branches: 25,
+      functions: 25,
+      statements: 25,
+      lines: 25,
     },
   },
 }
