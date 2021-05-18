@@ -21,6 +21,7 @@
     "no-use-before-define": "off",
     "no-useless-constructor": "off",
     "space-before-function-paren": "off",
+    "no-prototype-builtins": "off",
     "no-dupe-class-members": "off",
     "comma-dangle": ["error", {
       "arrays": "always-multiline",
