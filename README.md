@@ -18,7 +18,7 @@ Frictionless is a Github Action for continuous data validation of your repositor
 
 ```yaml
 - name: Frictionless Repository
-  uses: frictionlessdata/repository@v0.3.0
+  uses: frictionlessdata/repository@v0.5.0
 ```
 
 ## Documentation
