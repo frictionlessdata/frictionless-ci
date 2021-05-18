@@ -6,7 +6,6 @@ import { action } from '../lib/action.js'
 describe('General', () => {
   it('main', async () => {
     const { path } = await dir()
-    process.chdir(path)
-    await action()
+    await action({ workingDirectory: path })
   })
 })
