@@ -1,6 +1,6 @@
 {
   "name": "frictionless-repository",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Continious data validation",
   "main": "lib/index.js",
   "type": "module",
