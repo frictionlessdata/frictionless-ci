@@ -1,11 +1,10 @@
 import { dir } from 'tmp-promise'
-import { action } from '../lib'
+import * as config from '../lib/config.js'
 
 // General
 
 describe('General', () => {
   it('main', async () => {
-    const { path } = await dir()
-    await action({ workingDirectory: path })
+    expect(config.INQUIRY_PROPERTY).toBe('main')
   })
 })
