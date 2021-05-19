@@ -6,6 +6,6 @@ RUN \
   curl -fsSL https://deb.nodesource.com/setup_14.x | bash - && \
   apt-get install -y nodejs && \
   npm install --production && \
-  pip install frictionless[excel]
+  pip install frictionless[excel,json]
 
 ENTRYPOINT ["node", "/lib/main.js"]
