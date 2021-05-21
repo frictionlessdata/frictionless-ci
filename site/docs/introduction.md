@@ -1,6 +1,12 @@
 ---
-title: Overview
+title: Introduction
 ---
+
+[![Build](https://img.shields.io/github/workflow/status/frictionlessdata/repository/general/main)](https://github.com/frictionlessdata/repository/actions)
+[![Coverage](https://img.shields.io/codecov/c/github/frictionlessdata/repository/main)](https://codecov.io/gh/frictionlessdata/repository)
+[![Release](https://img.shields.io/github/v/release/frictionlessdata/repository)](https://github.com/frictionlessdata/repository/releases)
+[![Codebase](https://img.shields.io/badge/codebase-github-brightgreen)](https://github.com/frictionlessdata/repository)
+[![Support](https://img.shields.io/badge/support-discord-brightgreen)](https://discord.com/channels/695635777199145130/695635777199145133)
 
 Frictionless Repository is a Github Action created for continous data validation. The idea is that on every commit to your repository there will be run a validation process to find tabular errors and other problems in your data.
 

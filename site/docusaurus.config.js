@@ -72,7 +72,7 @@ module.exports = {
       },
       items: [
         {
-          to: 'docs/overview',
+          to: 'docs/introduction',
           label: 'Documentation',
           position: 'left',
         },

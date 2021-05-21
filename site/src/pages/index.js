@@ -33,7 +33,7 @@ function Home() {
           <div className={styles.indexCtas}>
             <Link
               className={styles.indexCtasGetStartedButton}
-              to={useBaseUrl('docs/overview')}
+              to={useBaseUrl('docs/introduction')}
             >
               Get Started
             </Link>

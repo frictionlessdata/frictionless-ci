@@ -1,5 +1,5 @@
 ---
-title: Installation
+title: Getting Started
 ---
 
 There are two options of installing Fricitonless Repository. In both cases it will be validating your CSV and EXCEL files on every push, tag, or PR (or based on your configuration). After a commit and a workflow run you will see a link to a validation report within the workflow log or an error message.
