@@ -1,3 +1,3 @@
 module.exports = {
-  docs: ['getting-started'],
+  docs: ['overview', 'installation', 'configuration', 'statuses', 'reports', 'badges'],
 }

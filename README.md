@@ -15,7 +15,8 @@ Frictionless is a Github Action for continuous data validation of your repositor
 ## Features
 
 - Open Source (MIT)
-- Github Action
+- Validation badges
+- Composable Github Action
 
 ## Example
 

@@ -72,7 +72,7 @@ module.exports = {
       },
       items: [
         {
-          to: 'docs/getting-started',
+          to: 'docs/overview',
           label: 'Documentation',
           position: 'left',
         },

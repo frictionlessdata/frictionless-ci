@@ -27,13 +27,13 @@ function Home() {
               className={styles.heroLogo}
               src={useBaseUrl('img/promo.png')}
             />
-            Github <span className={styles.heroProjectKeywords}>Action</span> for data{' '}
-            <span className={styles.heroProjectKeywords}>validation</span>
+            Github <span className={styles.heroProjectKeywords}>Action</span> <br />
+            for data <span className={styles.heroProjectKeywords}>validation</span>
           </h1>
           <div className={styles.indexCtas}>
             <Link
               className={styles.indexCtasGetStartedButton}
-              to={useBaseUrl('docs/getting-started')}
+              to={useBaseUrl('docs/overview')}
             >
               Get Started
             </Link>
@@ -59,7 +59,7 @@ function Home() {
         <div className="container text--center">
           <div className="row">
             <div className="col">
-              <a href="docs/getting-started">
+              <a href="docs/overview">
                 <img
                   className={styles.featureImage}
                   alt="Data Validation"
@@ -73,7 +73,7 @@ function Home() {
               </p>
             </div>
             <div className="col">
-              <a href="docs/getting-started">
+              <a href="docs/overview">
                 <img
                   className={styles.featureImage}
                   alt="Github Statuses"
@@ -87,7 +87,7 @@ function Home() {
               </p>
             </div>
             <div className="col">
-              <a href="docs/getting-started">
+              <a href="docs/overview">
                 <img
                   className={styles.featureImage}
                   alt="Visual Reports"
