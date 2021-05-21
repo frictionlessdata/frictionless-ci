@@ -41,7 +41,7 @@ function Report() {
           })
         `}</script>
       </Head>
-      <div class="cotainer margin-vert--lg">
+      <div className="cotainer margin-vert--lg">
         <div id="workflow"></div>
       </div>
     </Layout>
