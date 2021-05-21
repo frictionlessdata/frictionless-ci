@@ -8,7 +8,7 @@ title: Introduction
 [![Codebase](https://img.shields.io/badge/codebase-github-brightgreen)](https://github.com/frictionlessdata/repository)
 [![Support](https://img.shields.io/badge/support-discord-brightgreen)](https://discord.com/channels/695635777199145130/695635777199145133)
 
-Frictionless Repository is a Github Action created for continous data validation. It is a minimalistic wrapper over [Github Actions](https://github.com/features/actions) and [Frictionless Data](https://frictionlessdata.io/). In this introduction we will show an example of its work and desribe the underlaying projects.
+Frictionless Repository is a Github Action created for continous data validation. It is a minimalistic integration between [Github Actions](https://github.com/features/actions) and [Frictionless Data](https://frictionlessdata.io/). In this introduction we will show an example of its work and desribe the underlaying projects.
 
 ## How It Works
 
