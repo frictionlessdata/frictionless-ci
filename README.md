@@ -20,10 +20,12 @@ Frictionless is a Github Action for continuous data validation of your repositor
 
 ## Example
 
-```yaml
-- name: Frictionless Repository
-  uses: frictionlessdata/repository@v0.5.0
-```
+> Take a look at the [DEMO](https://github.com/frictionlessdata/repository-demo) repository
+
+[![Frictionless](https://github.com/frictionlessdata/repository-demo/actions/workflows/frictionless.yaml/badge.svg)](https://repository.frictionlessdata.io/report?user=frictionlessdata&repo=repository-demo&flow=frictionless)
+[![Experimental](https://github.com/frictionlessdata/repository-demo/actions/workflows/experimental.yaml/badge.svg)](https://repository.frictionlessdata.io/report?user=frictionlessdata&repo=repository-demo&flow=experimental)
+
+![examle](https://user-images.githubusercontent.com/557395/119179704-8b87c880-ba6f-11eb-8222-6f5f61a1e98b.png)
 
 ## Documentation
 
