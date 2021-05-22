@@ -27,8 +27,8 @@ function Home() {
               className={styles.heroLogo}
               src={useBaseUrl('img/promo.png')}
             />
-            Github <span className={styles.heroProjectKeywords}>Action</span> <br />
-            for data <span className={styles.heroProjectKeywords}>validation</span>
+            Github <span>Action</span> <br />
+            for <span className={styles.heroProjectKeywords}>data validation</span>
           </h1>
           <div className={styles.indexCtas}>
             <Link
