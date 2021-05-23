@@ -62,7 +62,7 @@ extra:
     - path: data/other.csv
 ```
 
-## Best Practices
+## Validation Strategy
 
 You can use Frictionless in many ways and this limit is only our imagination. Thanks to composability of Github Actions, it's possible to integrate Frictionless with many other steps and implement complex validation strategies. On the other hand, if you are new to Github Actions we recommend to start from these setups:
 
@@ -181,3 +181,28 @@ jobs:
       - name: Frictionless Repository
         uses: frictionlessdata/repository@v0.8.0
 ```
+
+## Validation Triggers
+
+Github Actions provides a great deal of flexibility regarding on when your workflow will be run. Here is a quick example:
+
+> .github/workflows/(name).yaml
+
+```
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  # Also trigger on page_build, as well as release created events
+  page_build:
+  release:
+    types: # This configuration does not affect the page_build event above
+      - created`
+```
+
+This knowledge is related not only to Frictionless Repository but to all Github Actions so we really recommend to read [Github Documentaion](https://docs.github.com/en/actions/reference/events-that-trigger-workflows) on this topic.
