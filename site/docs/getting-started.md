@@ -65,4 +65,3 @@ Clicking on that link will bring you to the validation report:
 There a "Badge" button to reveal a badge for this workflow. You can add this badge to your README.md file or any other markdown file:
 
 [![Experimental](https://github.com/frictionlessdata/repository-demo/actions/workflows/experimental.yaml/badge.svg)](https://repository.frictionlessdata.io/report?user=frictionlessdata&repo=repository-demo&flow=experimental)
-

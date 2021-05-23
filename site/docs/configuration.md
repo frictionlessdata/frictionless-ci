@@ -4,21 +4,6 @@ title: Configuration
 
 Frictionless Repository can work without any additional configuration. It will just validate all the CSV and EXCEL files it can find in your repository (respecting `.gitignore` file).
 
-## Inqiury Parameter
-
-Frictionless Repository step as a part of Github Workflow acceps only one paramenter called `inquiry`. Here is an example:
-
-> .github/workflows/(name).yaml
-
-```yaml
-- name: Validate data
-  uses: frictionlessdata/repository@v0.8.0
-  with:
-    inquiry: extra
-```
-
-By default, the `inqiury` paramenter is set to `main`.
-
 ## Configuration File
 
 You can add a `.github/frictionless.yaml` file to your Github repository to provide an additional configuration. This file is a mapping in a form of `inquiry name: inqiury descriptor`. It's easier to understan using an example:
@@ -26,7 +11,7 @@ You can add a `.github/frictionless.yaml` file to your Github repository to prov
 > .github/frictionless.yaml
 
 ```yaml
-extra:
+main:
   tasks:
     - path: data/valid.csv
     - path: data/invalid.csv
@@ -49,6 +34,32 @@ main:
             groupChar: ','
             constraints:
               maximum: 40000
+```
+
+Note, that we used the `main` inqiury name because it's a default inquiry. You can have multiple inquiries in your repository setting the `inquiry` parameter in your workflow.
+
+## Inqiury Parameter
+
+Frictionless Repository step as a part of Github Workflow acceps only one paramenter called `inquiry`. Here is an example:
+
+> .github/workflows/(name).yaml
+
+```yaml
+- name: Validate data
+  uses: frictionlessdata/repository@v0.8.0
+  with:
+    inquiry: extra
+```
+
+By default, the `inqiury` paramenter is set to `main`. So the examples in the previous section will work for any step without the `inqiury` parameter or when it's set to `main`. When we have, as in our example, `inquiry: extra` we need to provide a coressponding configuration:
+
+> .github/frictionless.yaml
+
+```yaml
+extra:
+  tasks:
+    - path: data/table.csv
+    - path: data/other.csv
 ```
 
 ## Best Practices
@@ -78,7 +89,7 @@ jobs:
 
 Using this setup you will have a single "Frictionless" badge that you can add to your README.md file.
 
-### Multiple Workflows
+### Multiple Workflow
 
 You have a few groups of independent data or interested in more sophisticated logic you might use multiple workflows. For example, consider we have some data related to humans and some to animals:
 
@@ -136,7 +147,7 @@ animals:
 
 Don't forget that we use Frictionless Framework's [Inquiry](https://framework.frictionlessdata.io/docs/guides/framework/inquiry-guide) that gives us even more flexibility. For example, you can write quite complex tasks logis and combine it with your single or multiple workflows.
 
-### Complex Workflows
+### Complex Workflow
 
 On top of dedicated validation workflows, you can integrate Frictionless Repository inside existent workflows. For example, here is a Frictionless-Flat Data integration:
 

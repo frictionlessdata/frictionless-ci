@@ -3,7 +3,7 @@ module.exports = {
     'introduction',
     'getting-started',
     'configuration',
-    'workflow',
+    'inquiries',
     'reports',
     'badges',
   ],
