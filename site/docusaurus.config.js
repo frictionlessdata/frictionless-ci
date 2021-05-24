@@ -102,20 +102,20 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Guides',
-              to: 'docs/guides/guides-overview',
+              label: 'Configuration',
+              to: 'docs/configuration',
             },
             {
-              label: 'Tutorials',
-              to: 'docs/tutorials/tutorials-overview',
+              label: 'Inquiries',
+              to: 'docs/inquiries',
             },
             {
-              label: 'References',
-              to: 'docs/references/references-overview',
+              label: 'Reports',
+              to: 'docs/reports',
             },
             {
-              label: 'Development',
-              to: 'docs/development/development',
+              label: 'Badges',
+              to: 'docs/badges',
             },
           ],
         },
