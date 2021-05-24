@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "coverage": "sensible-browser coverage/index.html",
-    "format": "prettier --write 'lib/**/*.js*' && eslint --fix 'lib/**/*.js*'",
-    "lint": "prettier --check 'lib/**/*.js*' && eslint 'lib/**/*.js*'",
+    "format": "prettier --write '{lib,test}/**/*.js*' && eslint --fix '{lib,test}/**/*.js*'",
+    "lint": "prettier --check '{lib,test}/**/*.js*' && eslint '{lib,test}/**/*.js*'",
     "prepare": "husky install",
     "pretest": "npm run lint",
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest --coverage",
