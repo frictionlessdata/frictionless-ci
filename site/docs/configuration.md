@@ -6,7 +6,7 @@ Frictionless Repository can work without any additional configuration. It will j
 
 ## Configuration File
 
-You can add a `.github/frictionless.yaml` file to your Github repository to provide an additional configuration. This file is a mapping in a form of `inquiry name: inqiury descriptor`. It's easier to understan using an example:
+You can add a `.github/frictionless.yaml` file to your Github repository to provide an additional configuration. This file is a mapping in a form of `inquiry name: inqiury descriptor`. It's easier to understand using an example:
 
 > .github/frictionless.yaml
 
@@ -17,7 +17,7 @@ main:
     - path: data/invalid.csv
 ```
 
-The inquiry descriptor is a Frictionless Framework's [Inquiry](https://framework.frictionlessdata.io/docs/guides/framework/inquiry-guide) so you can use whather is possible to use for the Frictionless Framework validation. Here is a more complex example:
+The inquiry descriptor is a Frictionless Framework's [Inquiry](https://framework.frictionlessdata.io/docs/guides/framework/inquiry-guide) so you can use whatever is possible to use for the Frictionless Framework validation. Here is a more complex example:
 
 > https://github.com/roll/flat-demo-bitcoin-price/blob/main/.github/frictionless.yaml
 
@@ -36,11 +36,11 @@ main:
               maximum: 40000
 ```
 
-Note, that we used the `main` inqiury name because it's a default inquiry. You can have multiple inquiries in your repository setting the `inquiry` parameter in your workflow.
+Note, that we used the `main` inquiry name because it's a default inquiry. You can have multiple inquiries in your repository setting the `inquiry` parameter in your workflow.
 
-## Inqiury Parameter
+## Inquiry Parameter
 
-Frictionless Repository step as a part of Github Workflow acceps only one paramenter called `inquiry`. Here is an example:
+Frictionless Repository step as a part of Github Workflow accepts only one parameter called `inquiry`. Here is an example:
 
 > .github/workflows/(name).yaml
 
@@ -51,7 +51,7 @@ Frictionless Repository step as a part of Github Workflow acceps only one parame
     inquiry: extra
 ```
 
-By default, the `inqiury` paramenter is set to `main`. So the examples in the previous section will work for any step without the `inqiury` parameter or when it's set to `main`. When we have, as in our example, `inquiry: extra` we need to provide a coressponding configuration:
+By default, the `inqiury` parameter is set to `main`. So the examples in the previous section will work for any step without the `inqiury` parameter or when it's set to `main`. When we have, as in our example, `inquiry: extra` we need to provide a corresponding configuration:
 
 > .github/frictionless.yaml
 
@@ -145,7 +145,7 @@ animals:
     - source: animals/*.csv
 ```
 
-Don't forget that we use Frictionless Framework's [Inquiry](https://framework.frictionlessdata.io/docs/guides/framework/inquiry-guide) that gives us even more flexibility. For example, you can write quite complex tasks logis and combine it with your single or multiple workflows.
+Don't forget that we use Frictionless Framework's [Inquiry](https://framework.frictionlessdata.io/docs/guides/framework/inquiry-guide) that gives us even more flexibility. For example, you can write quite complex tasks logic and combine it with your single or multiple workflows.
 
 ### Complex Workflow
 

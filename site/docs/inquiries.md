@@ -67,7 +67,7 @@ You can also provide dialect, layout, or schema as a file path e.g. `schema: sch
 
 ## Validation Details
 
-It's possible to configure how the validation happens as it's in [Errors Configuraiton](https://framework.frictionlessdata.io/docs/guides/validation-guide#pickskip-errors):
+It's possible to configure how the validation happens as it's in [Errors Configuration](https://framework.frictionlessdata.io/docs/guides/validation-guide#pickskip-errors):
 
 > .github/frictionless.yaml
 

@@ -51,7 +51,7 @@ function Home() {
       </div>
       <div className={classnames(styles.announcement, styles.announcementDark)}>
         <div className={styles.announcementInner}>
-          Frictionless Repository is a Github Action for continious data validation of
+          Frictionless Repository is a Github Action for continuous data validation of
           your repository.
         </div>
       </div>
@@ -63,13 +63,13 @@ function Home() {
                 <img
                   className={styles.featureImage}
                   alt="Data Validation"
-                  src={useBaseUrl('img/describe.png')}
+                  src={useBaseUrl('img/validation.png')}
                 />
                 <h3 className="padding-top--md">Data Validation</h3>
               </a>
               <p className="padding-horiz--md">
-                You can infer, edit and save metadata of your data tables. It's a first
-                step for ensuring data quality and usability.
+                Frictionless Repository will be continuously validating your data for
+                tabular errors.
               </p>
             </div>
             <div className="col">
@@ -77,13 +77,13 @@ function Home() {
                 <img
                   className={styles.featureImage}
                   alt="Github Statuses"
-                  src={useBaseUrl('img/extract.png')}
+                  src={useBaseUrl('img/reports.png')}
                 />
-                <h3 className="padding-top--md">Github Statuses</h3>
+                <h3 className="padding-top--md">Visual Reports</h3>
               </a>
               <p className="padding-horiz--md">
-                You can read your data using a unified tabular interface. Data quality and
-                consistency are guaranteed by a schema.
+                After a validation Frictionless Repository will provide a visual report
+                available by a link.
               </p>
             </div>
             <div className="col">
@@ -91,13 +91,13 @@ function Home() {
                 <img
                   className={styles.featureImage}
                   alt="Visual Reports"
-                  src={useBaseUrl('img/validate.png')}
+                  src={useBaseUrl('img/medal.png')}
                 />
-                <h3 className="padding-top--md">Visual Reports</h3>
+                <h3 className="padding-top--md">Markdown Badges</h3>
               </a>
               <p className="padding-horiz--md">
-                You can read your data using a unified tabular interface. Data quality and
-                consistency are guaranteed by a schema.
+                With Frictionless Repository you can have a validation badge to always see
+                the status.
               </p>
             </div>
           </div>
