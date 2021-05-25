@@ -1,6 +1,6 @@
 module.exports = {
   title: 'Frictionless Repository',
-  tagline: 'Github action for Frictionless data validation',
+  tagline: 'Github Action for Frictionless Data validation',
   organizationName: 'Frictionless Data',
   projectName: 'frictionless',
   baseUrl: '/',
@@ -9,7 +9,7 @@ module.exports = {
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   customFields: {
-    description: 'Github action for Frictionless data validation',
+    description: 'Github Action for Frictionless Data validation',
   },
   themes: ['@docusaurus/theme-live-codeblock'],
   // stylesheets: ["https://fonts.googleapis.com/css?family=Roboto&display=swap"],
