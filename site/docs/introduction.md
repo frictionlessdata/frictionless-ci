@@ -18,7 +18,7 @@ On every commit to your repository there will be run a validation process to fin
 
 ## Github Actions
 
-Github Actions is a continuous integration service. If you're not familiar with Github Actions we really recommend you to watch a short talk given on csv,conf,v6:
+Github Actions is a continuous integration service. If you're not familiar with Github Actions we really recommend you to watch a short talk given by [Grant R. Vousden-Dishington](https://github.com/GrantRVD) on csv,conf,v6:
 
 <p><iframe width="560" height="315" src="https://www.youtube.com/embed/0WYpiba-UjE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
 
