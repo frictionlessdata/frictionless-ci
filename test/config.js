@@ -1,4 +1,3 @@
-import { dir } from 'tmp-promise'
 import * as config from '../lib/config.js'
 
 // General
