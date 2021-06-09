@@ -8,12 +8,6 @@ function Report() {
       <Head>
         <link
           rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-          crossorigin="anonymous"
-        />
-        <link
-          rel="stylesheet"
           href="https://unpkg.com/frictionless-components/dist/frictionless-components.css"
         />
         <script src="https://unpkg.com/frictionless-components/dist/frictionless-components.js"></script>
@@ -41,7 +35,7 @@ function Report() {
           })
         `}</script>
       </Head>
-      <div className="cotainer margin-vert--lg">
+      <div style={{ marginTop: '2rem' }}>
         <div id="workflow"></div>
       </div>
     </Layout>
