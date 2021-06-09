@@ -35,7 +35,7 @@ function Report() {
           })
         `}</script>
       </Head>
-      <div style={{ marginTop: '2rem' }}>
+      <div style={{ margin: '2rem 0' }}>
         <div id="workflow"></div>
       </div>
     </Layout>
