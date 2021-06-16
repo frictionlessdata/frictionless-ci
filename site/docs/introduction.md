@@ -29,7 +29,7 @@ Frictionless Data is a comprehensive data software and standards project coverin
 - [Frictionless Components](https://components.frictionlessdata.io/?path=/story/components-report--invalid)
 
 Frictionless Repository can be described by this simple flow:
-- you add a Frictionless Repository step to their worflow on Github
+- you add a Frictionless Repository step to their workflow on Github
 - Frictionless Framework validates your data and saves the result as a workflow's artifact
 - Frictionless Components fetch and render this validation report
 
