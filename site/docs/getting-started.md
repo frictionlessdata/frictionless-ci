@@ -12,7 +12,7 @@ There are two options of installing Fricitonless Repository, as a new workflow o
 
 Add a file shown below in your Github Repository:
 
-> .github/worflows/frictionless.yaml
+> .github/workflows/frictionless.yaml
 
 ```yaml
 name: frictionless
@@ -41,7 +41,7 @@ jobs:
 
 Just add this step to an existent workflow:
 
-> .github/worflows/(name).yaml
+> .github/workflows/(name).yaml
 
 ```yaml
 - name: Validate data
