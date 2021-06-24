@@ -17,7 +17,7 @@ main:
     - path: data/invalid.csv
 ```
 
-The inquiry descriptor is a Frictionless Framework's [Inquiry](https://framework.frictionlessdata.io/docs/guides/framework/inquiry-guide) so you can use whatever is possible to use for the Frictionless Framework validation. Here is a more complex example:
+The inquiry descriptor is a Frictionless Framework's [Inquiry](./inquiries.md) so you can use whatever is possible to use for the Frictionless Framework validation. Here is a more complex example:
 
 > https://github.com/roll/flat-demo-bitcoin-price/blob/main/.github/frictionless.yaml
 
@@ -145,7 +145,7 @@ animals:
     - source: animals/*.csv
 ```
 
-Don't forget that we use Frictionless Framework's [Inquiry](https://framework.frictionlessdata.io/docs/guides/framework/inquiry-guide) that gives us even more flexibility. For example, you can write quite complex tasks logic and combine it with your single or multiple workflows.
+Don't forget that we use Frictionless Framework's [Inquiry](./inquiries.md) that gives us even more flexibility. For example, you can write quite complex tasks logic and combine it with your single or multiple workflows.
 
 ### Complex Workflow
 
