@@ -188,7 +188,7 @@ Github Actions provides a great deal of flexibility regarding on when your workf
 
 > .github/workflows/(name).yaml
 
-```
+```yaml
 on:
   # Trigger the workflow on push or pull request,
   # but only for the main branch
