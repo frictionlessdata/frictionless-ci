@@ -1,10 +1,13 @@
 name: Frictionless Repository
 description: Continious data validation
 author: Frictionless Data
+branding:
+  icon: check-circle
+  color: green
+runs:
+  using: docker
+  image: Dockerfile
 inputs:
   inquiry:
     description: A default inquiry's property name
     default: main
-runs:
-  using: docker
-  image: Dockerfile
