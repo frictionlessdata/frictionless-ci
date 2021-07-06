@@ -21,8 +21,6 @@ on:
   push:
     branches:
       - main
-    tags:
-      - v*.*.*
   pull_request:
     branches:
       - main
