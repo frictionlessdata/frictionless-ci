@@ -1,0 +1,1 @@
+frictionless[excel,json]==4.*
