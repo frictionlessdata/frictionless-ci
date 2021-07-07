@@ -84,7 +84,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Validate data
-        uses: frictionlessdata/repository@v1 # update to the latest version
+        uses: frictionlessdata/repository@v1
 ```
 
 Using this setup you will have a single "Frictionless" badge that you can add to your README.md file.
@@ -107,7 +107,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Validate data
-        uses: frictionlessdata/repository@v1 # update to the latest version
+        uses: frictionlessdata/repository@v1
         with:
             inquiry: people
 ```
@@ -126,7 +126,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Validate data
-        uses: frictionlessdata/repository@v1 # update to the latest version
+        uses: frictionlessdata/repository@v1
         with:
             inquiry: animals
 ```
