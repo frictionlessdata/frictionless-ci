@@ -1,14 +1,18 @@
-const { copy } = require('fs-extra')
+const util = require('util')
 const { dir } = require('tmp-promise')
 const { action } = require('../lib/action')
+const { copy, readJson } = require('fs-extra')
 const artifact = require('@actions/artifact')
 const core = require('@actions/core')
 
 // General
 
 describe('General', () => {
-  let inputs
+  const any = expect.anything()
+  const execute = jest.fn()
+  const upload = jest.fn()
   let workdir
+  let inputs
 
   beforeAll(() => {
     // Set environ
@@ -25,9 +29,12 @@ describe('General', () => {
     jest.spyOn(core, 'debug').mockImplementation(jest.fn())
 
     // Mock artifact
-    const uploadArtifact = jest.fn()
-    uploadArtifact.mockReturnValue({ failedItems: [] })
-    jest.spyOn(artifact, 'create').mockImplementation(() => ({ uploadArtifact }))
+    upload.mockReturnValue({ failedItems: [] })
+    jest.spyOn(artifact, 'create').mockImplementation(() => ({ uploadArtifact: upload }))
+
+    // Mock execute
+    execute.mockReturnValue({ stdout: '{"valid": false}' })
+    jest.spyOn(util, 'promisify').mockImplementation(() => execute)
   })
 
   beforeEach(async () => {
@@ -45,8 +52,23 @@ describe('General', () => {
   })
 
   it('files', async () => {
+    // Action
     await copy('data/invalid.csv', `${workdir.path}/invalid.csv`)
     await copy('data/valid.csv', `${workdir.path}/valid.csv`)
     await action({ workingDirectory: workdir.path })
+
+    // Validation
+    expect(await readJson(`${workdir.path}/report.json`)).toEqual({ valid: false })
+    expect(await readJson(`${workdir.path}/inquiry.json`)).toEqual({
+      tasks: [{ source: 'invalid.csv' }, { source: 'valid.csv' }],
+    })
+
+    // Integration
+    expect(execute).toHaveBeenCalledWith('frictionless validate inquiry.json --json')
+    expect(upload).toHaveBeenNthCalledWith(1, 'inquiry', ['inquiry.json'], '.', any)
+    expect(upload).toHaveBeenNthCalledWith(2, 'report', ['report.json'], '.', any)
+    expect(core.setFailed).toHaveBeenCalledWith(
+      'Data validation has failed: https://repository.frictionlessdata.io/report/?user=user&repo=repo&flow=flow&run=id'
+    )
   })
 })
