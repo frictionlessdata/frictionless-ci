@@ -1,3 +1,4 @@
+const { copy } = require('fs-extra')
 const { dir } = require('tmp-promise')
 const { action } = require('../lib/action')
 const artifact = require('@actions/artifact')
@@ -5,9 +6,10 @@ const core = require('@actions/core')
 
 // General
 
-let inputs = {}
-
 describe('General', () => {
+  let inputs
+  let workdir
+
   beforeAll(() => {
     jest.spyOn(core, 'getInput').mockImplementation((name) => inputs[name])
     jest.spyOn(core, 'setFailed').mockImplementation(jest.fn())
@@ -18,8 +20,16 @@ describe('General', () => {
     jest.spyOn(artifact, 'create').mockImplementation(jest.fn())
   })
 
-  beforeEach(() => {
+  beforeEach(async () => {
     inputs = {}
+    workdir = await dir({ unsafeCleanup: true })
+    await copy('data/valid.csv', `${workdir.path}/valid.csv`)
+    await copy('data/invalid.csv', `${workdir.path}/invalid.csv`)
+  })
+
+  afterEach(() => {
+    inputs = {}
+    workdir.cleanup()
   })
 
   afterAll(() => {
@@ -27,7 +37,7 @@ describe('General', () => {
   })
 
   it('default', async () => {
-    const temp = await dir()
-    console.log(temp.path)
+    await action({ workingDirectory: workdir.path })
+    console.log(core.setFailed.mock.calls)
   })
 })
