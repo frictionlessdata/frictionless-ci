@@ -1,4 +1,4 @@
-const jestConfig = {
+module.exports = {
   displayName: 'node',
   testMatch: ['**/test/**/*.js'],
   testEnvironment: 'node',
@@ -14,5 +14,3 @@ const jestConfig = {
     },
   },
 }
-
-export default jestConfig

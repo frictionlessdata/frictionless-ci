@@ -1,4 +1,4 @@
-import * as config from '../lib/config.js'
+const config = require('../lib/config')
 
 // General
 

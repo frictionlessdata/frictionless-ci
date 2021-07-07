@@ -1,8 +1,7 @@
-import { dir } from 'tmp-promise'
-import { jest } from '@jest/globals'
-import * as core from '@actions/core'
-import * as artifact from '@actions/artifact'
-import { action } from '../lib/action.js'
+const { dir } = require('tmp-promise')
+const { action } = require('../lib/action')
+const artifact = require('@actions/artifact')
+const core = require('@actions/core')
 
 // General
 
