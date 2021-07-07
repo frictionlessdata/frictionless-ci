@@ -46,7 +46,7 @@ Frictionless Repository step as a part of Github Workflow accepts only one param
 
 ```yaml
 - name: Validate data
-  uses: frictionlessdata/repository@v0.8.0
+  uses: frictionlessdata/repository@v1
   with:
     inquiry: extra
 ```
@@ -84,7 +84,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Validate data
-        uses: frictionlessdata/repository@v0.8.0 # update to the latest version
+        uses: frictionlessdata/repository@v1 # update to the latest version
 ```
 
 Using this setup you will have a single "Frictionless" badge that you can add to your README.md file.
@@ -107,7 +107,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Validate data
-        uses: frictionlessdata/repository@v0.8.0 # update to the latest version
+        uses: frictionlessdata/repository@v1 # update to the latest version
         with:
             inquiry: people
 ```
@@ -126,7 +126,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Validate data
-        uses: frictionlessdata/repository@v0.8.0 # update to the latest version
+        uses: frictionlessdata/repository@v1 # update to the latest version
         with:
             inquiry: animals
 ```
@@ -179,7 +179,7 @@ jobs:
           postprocess: postprocess.js # A postprocessing javascript or typescript file written in Deno
       # The fourth step is validation using Frictionless Repository
       - name: Frictionless Repository
-        uses: frictionlessdata/repository@v0.8.0
+        uses: frictionlessdata/repository@v1
 ```
 
 ## Validation Triggers

@@ -32,7 +32,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Validate data
-        uses: frictionlessdata/repository@v0.8.0 # update to the latest version
+        uses: frictionlessdata/repository@v1 # update to the latest version
 ```
 
 ### Existent Workflow
@@ -43,7 +43,7 @@ Just add this step to an existent workflow:
 
 ```yaml
 - name: Validate data
-  uses: frictionlessdata/repository@v0.8.0 # update to the latest version
+  uses: frictionlessdata/repository@v1 # update to the latest version
 ```
 
 ## Usage
