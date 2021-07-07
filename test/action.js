@@ -40,10 +40,10 @@ describe('General', () => {
   beforeEach(async () => {
     inputs = {}
     workdir = await dir({ unsafeCleanup: true })
+    process.env.GITHUB_WORKSPACE = workdir.path
   })
 
   afterEach(() => {
-    inputs = {}
     workdir.cleanup()
   })
 
@@ -55,7 +55,7 @@ describe('General', () => {
     // Action
     await copy('data/invalid.csv', `${workdir.path}/invalid.csv`)
     await copy('data/valid.csv', `${workdir.path}/valid.csv`)
-    await action({ workingDirectory: workdir.path })
+    await action()
 
     // Validation
     expect(await readJson(`${workdir.path}/report.json`)).toEqual({ valid: false })
