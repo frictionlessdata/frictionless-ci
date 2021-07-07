@@ -50,6 +50,7 @@
     "jszip": "^3.6.0",
     "node-fetch": "^2.6.1",
     "npm-check-updates": "^11.5.13",
-    "prettier": "^2.3.0"
+    "prettier": "^2.3.0",
+    "tmp-promise": "^3.0.2"
   }
 }

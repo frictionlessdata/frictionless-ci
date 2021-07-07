@@ -1,0 +1,8 @@
+main:
+  tasks:
+    - path: valid.csv
+
+extra:
+  tasks:
+    - path: valid.csv
+    - path: invalid.csv

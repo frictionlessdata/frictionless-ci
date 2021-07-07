@@ -1,0 +1,32 @@
+profile: data-package
+resources:
+  - encoding: utf-8
+    format: csv
+    hashing: md5
+    name: invalid
+    path: invalid.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: id
+          type: integer
+        - name: name
+          type: string
+        - name: field3
+          type: integer
+        - name: name2
+          type: integer
+    scheme: file
+  - encoding: utf-8
+    format: csv
+    hashing: md5
+    name: valid
+    path: valid.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: id
+          type: integer
+        - name: name
+          type: string
+    scheme: file
