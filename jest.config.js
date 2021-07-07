@@ -5,7 +5,6 @@ module.exports = {
   testTimeout: 10000,
   collectCoverage: false,
   coverageReporters: ['text-summary', 'html', 'lcov'],
-  setupFiles: ['<rootDir>/.jest/setup.js'],
   coverageThreshold: {
     global: {
       branches: 10,

@@ -11,6 +11,11 @@ describe('General', () => {
   let workdir
 
   beforeAll(() => {
+    // Set environ
+    process.env.GITHUB_REPOSITORY = 'user/repo'
+    process.env.GITHUB_WORKFLOW = 'flow'
+    process.env.GITHUB_RUN_ID = 'id'
+
     // Mock core
     jest.spyOn(core, 'getInput').mockImplementation((name) => inputs[name])
     jest.spyOn(core, 'setFailed').mockImplementation(jest.fn())
@@ -39,7 +44,8 @@ describe('General', () => {
     jest.restoreAllMocks()
   })
 
-  it('valid', async () => {
+  it('files', async () => {
+    await copy('data/invalid.csv', `${workdir.path}/invalid.csv`)
     await copy('data/valid.csv', `${workdir.path}/valid.csv`)
     await action({ workingDirectory: workdir.path })
   })
