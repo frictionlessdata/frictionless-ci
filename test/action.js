@@ -11,20 +11,23 @@ describe('General', () => {
   let workdir
 
   beforeAll(() => {
+    // Mock core
     jest.spyOn(core, 'getInput').mockImplementation((name) => inputs[name])
     jest.spyOn(core, 'setFailed').mockImplementation(jest.fn())
     jest.spyOn(core, 'error').mockImplementation(jest.fn())
     jest.spyOn(core, 'warning').mockImplementation(jest.fn())
     jest.spyOn(core, 'info').mockImplementation(jest.fn())
     jest.spyOn(core, 'debug').mockImplementation(jest.fn())
-    jest.spyOn(artifact, 'create').mockImplementation(jest.fn())
+
+    // Mock artifact
+    const uploadArtifact = jest.fn()
+    uploadArtifact.mockReturnValue({ failedItems: [] })
+    jest.spyOn(artifact, 'create').mockImplementation(() => ({ uploadArtifact }))
   })
 
   beforeEach(async () => {
     inputs = {}
     workdir = await dir({ unsafeCleanup: true })
-    await copy('data/valid.csv', `${workdir.path}/valid.csv`)
-    await copy('data/invalid.csv', `${workdir.path}/invalid.csv`)
   })
 
   afterEach(() => {
@@ -36,8 +39,8 @@ describe('General', () => {
     jest.restoreAllMocks()
   })
 
-  it('default', async () => {
+  it('valid', async () => {
+    await copy('data/valid.csv', `${workdir.path}/valid.csv`)
     await action({ workingDirectory: workdir.path })
-    console.log(core.setFailed.mock.calls)
   })
 })
