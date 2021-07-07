@@ -148,4 +148,55 @@ describe('General', () => {
       'Data validation has failed: https://repository.frictionlessdata.io/report/?user=user&repo=repo&flow=flow&run=id'
     )
   })
+
+  it('inputs', async () => {
+    // Action
+    await copy('data/frictionless.yaml', `${workdir.path}/.github/frictionless.yaml`)
+    await copy('data/invalid.csv', `${workdir.path}/invalid.csv`)
+    inputs.inquiry = 'extra'
+    await action()
+
+    // Validation
+    expect(await readJson(`${workdir.path}/report.json`)).toEqual({ valid: false })
+    expect(await readJson(`${workdir.path}/inquiry.json`)).toEqual({
+      tasks: [{ path: 'invalid.csv' }],
+    })
+
+    // Integration
+    expect(execute).toHaveBeenCalledWith('frictionless validate inquiry.json --json')
+    expect(upload).toHaveBeenNthCalledWith(1, 'inquiry', ['inquiry.json'], '.', any)
+    expect(upload).toHaveBeenNthCalledWith(2, 'report', ['report.json'], '.', any)
+    expect(core.setFailed).toHaveBeenCalledWith(
+      'Data validation has failed: https://repository.frictionlessdata.io/report/?user=user&repo=repo&flow=flow&run=id'
+    )
+  })
+
+  it('inputs bad', async () => {
+    await copy('data/frictionless.yaml', `${workdir.path}/.github/frictionless.yaml`)
+    inputs.inquiry = 'bad'
+    await action()
+    expect(core.setFailed).toHaveBeenCalledWith('Cannot read inquiry: not existent "bad"')
+  })
+
+  it('valid', async () => {
+    // Action
+    execute.mockReturnValue({ stdout: '{"valid": true}' })
+    await copy('data/valid.csv', `${workdir.path}/valid.csv`)
+    await action()
+    execute.mockReturnValue({ stdout: '{"valid": false}' })
+
+    // Validation
+    expect(await readJson(`${workdir.path}/report.json`)).toEqual({ valid: true })
+    expect(await readJson(`${workdir.path}/inquiry.json`)).toEqual({
+      tasks: [{ source: 'valid.csv' }],
+    })
+
+    // Integration
+    expect(execute).toHaveBeenCalledWith('frictionless validate inquiry.json --json')
+    expect(upload).toHaveBeenNthCalledWith(1, 'inquiry', ['inquiry.json'], '.', any)
+    expect(upload).toHaveBeenNthCalledWith(2, 'report', ['report.json'], '.', any)
+    expect(core.info).toHaveBeenCalledWith(
+      'Data validation has passed: https://repository.frictionlessdata.io/report/?user=user&repo=repo&flow=flow&run=id'
+    )
+  })
 })
