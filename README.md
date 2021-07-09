@@ -6,11 +6,11 @@
 [![Codebase](https://img.shields.io/badge/codebase-github-brightgreen)](https://github.com/frictionlessdata/repository)
 [![Support](https://img.shields.io/badge/support-discord-brightgreen)](https://discord.com/channels/695635777199145130/695635777199145133)
 
-Frictionless is a Github Action for continuous data validation of your repository.
+Frictionless Repository is a Github Action for continuous data validation of your repository.
 
 ## Purpose
 
-- **Continous Data Validation**: With Frictionless Repository you can ensure quiality of your data. This Github Action will report any problems with your data like bad header or missing cells.
+- **Continous Data Validation**: With Frictionless Repository you can ensure the quality of your data. This Github Action will report any problems with your data like bad header or missing cells.
 
 ## Features
 
