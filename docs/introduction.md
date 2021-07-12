@@ -10,6 +10,8 @@ title: Introduction
 
 Frictionless Repository is a Github Action created for continuous data validation. It is a minimalistic integration between [Github Actions](https://github.com/features/actions) and [Frictionless Data](https://frictionlessdata.io/). In this introduction we will show an example of its work and describe the projects it relies on.
 
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/kXA4hmuF57c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+
 ## How It Works
 
 On every commit to your repository there will be run a validation process to find tabular errors and other problems in your data. A visual validation report will be provided:
