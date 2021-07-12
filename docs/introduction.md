@@ -8,15 +8,15 @@ title: Introduction
 [![Codebase](https://img.shields.io/badge/codebase-github-brightgreen)](https://github.com/frictionlessdata/repository)
 [![Support](https://img.shields.io/badge/support-discord-brightgreen)](https://discord.com/channels/695635777199145130/695635777199145133)
 
-Frictionless Repository is a Github Action created for continuous data validation. It is a minimalistic integration between [Github Actions](https://github.com/features/actions) and [Frictionless Data](https://frictionlessdata.io/). In this introduction we will show an example of its work and describe the projects it relies on.
+Frictionless Repository is a Github Action created for continuous data validation. It is a minimalistic integration between [Github Actions](https://github.com/features/actions) and [Frictionless Data](https://frictionlessdata.io/). In this introduction we will show how it works and describe the projects it relies on. Let's get started and here is a example of a validation report provided by Frictionless Repository:
 
-<p><iframe width="560" height="315" src="https://www.youtube.com/embed/kXA4hmuF57c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+![Example](/img/example.png)
 
 ## How It Works
 
-On every commit to your repository there will be run a validation process to find tabular errors and other problems in your data. A visual validation report will be provided:
+On every commit to your repository there will be run a validation process to find tabular errors and other problems in your data. We created a demo video to introduce a basic workflow of continious data validation using Frictionless Repository:
 
-![Example](/img/example.png)
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/kXA4hmuF57c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
 
 ## Github Actions
 
