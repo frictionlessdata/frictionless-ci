@@ -59,7 +59,7 @@ function Home() {
         <div className="container text--center">
           <div className="row">
             <div className="col">
-              <a href="docs/overview">
+              <a href="docs/introduction">
                 <img
                   className={styles.featureImage}
                   alt="Data Validation"
@@ -73,7 +73,7 @@ function Home() {
               </p>
             </div>
             <div className="col">
-              <a href="docs/overview">
+              <a href="docs/reports">
                 <img
                   className={styles.featureImage}
                   alt="Github Statuses"
@@ -87,7 +87,7 @@ function Home() {
               </p>
             </div>
             <div className="col">
-              <a href="docs/overview">
+              <a href="docs/badges">
                 <img
                   className={styles.featureImage}
                   alt="Visual Reports"
