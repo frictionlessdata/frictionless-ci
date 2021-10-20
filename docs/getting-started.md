@@ -32,7 +32,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
-          lfs: true # add this to downlowd LFS files
+          lfs: true # add this to download LFS files
           submodules: true # add this to download submodules
       - name: Validate data
         uses: frictionlessdata/repository@v1
