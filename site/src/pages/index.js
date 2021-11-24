@@ -51,8 +51,8 @@ function Home() {
       </div>
       <div className={classnames(styles.announcement, styles.announcementDark)}>
         <div className={styles.announcementInner}>
-          Frictionless Repository is a Github Action for continuous data validation of
-          your repository.
+          Data management Github Action for continuous validation of tabular data in your
+          repository.
         </div>
       </div>
       <div className={styles.section}>
