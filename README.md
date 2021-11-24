@@ -6,7 +6,7 @@
 [![Codebase](https://img.shields.io/badge/codebase-github-brightgreen)](https://github.com/frictionlessdata/repository)
 [![Support](https://img.shields.io/badge/support-discord-brightgreen)](https://discord.com/channels/695635777199145130/695635777199145133)
 
-Data management Github Action that brings continuous data validation to tabular data in your repository.
+Data management service that brings continuous data validation to tabular data in your repository via Github Action
 
 ## Purpose
 

@@ -51,8 +51,8 @@ function Home() {
       </div>
       <div className={classnames(styles.announcement, styles.announcementDark)}>
         <div className={styles.announcementInner}>
-          Data management Github Action for continuous validation of tabular data in your
-          repository.
+          Data management service for continuous data validation in your repository via
+          Github Action
         </div>
       </div>
       <div className={styles.section}>
