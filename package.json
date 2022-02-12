@@ -7,7 +7,6 @@
     "coverage": "sensible-browser coverage/index.html",
     "format": "prettier --write '{lib,test}/**/*.js*' && eslint --fix '{lib,test}/**/*.js*'",
     "lint": "prettier --check '{lib,test}/**/*.js*' && eslint '{lib,test}/**/*.js*'",
-    "prepare": "husky install",
     "pretest": "npm run lint",
     "test": "jest --coverage",
     "update": "ncu -u"
@@ -44,7 +43,6 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-standard": "^4.1.0",
-    "husky": "^6.0.0",
     "jest": "^26.6.3",
     "jszip": "^3.6.0",
     "node-fetch": "^2.6.1",
