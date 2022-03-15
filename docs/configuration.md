@@ -6,7 +6,7 @@ Frictionless Repository can work without any additional configuration. It will j
 
 ## Configuration File
 
-You can add a `.github/frictionless.yaml` file to your Github repository to provide an additional configuration. This file is a mapping in a form of `inquiry name: inqiury descriptor`. It's easier to understand using an example:
+You can add a `.github/frictionless.yaml` file to your Github repository to provide an additional configuration. This file is a mapping in a form of `inquiry name: inquiry descriptor`. It's easier to understand using an example:
 
 > .github/frictionless.yaml
 
@@ -51,7 +51,7 @@ Frictionless Repository step as a part of Github Workflow accepts only one param
     inquiry: extra
 ```
 
-By default, the `inqiury` parameter is set to `main`. So the examples in the previous section will work for any step without the `inqiury` parameter or when it's set to `main`. When we have, as in our example, `inquiry: extra` we need to provide a corresponding configuration:
+By default, the `inquiry` parameter is set to `main`. So the examples in the previous section will work for any step without the `inquiry` parameter or when it's set to `main`. When we have, as in our example, `inquiry: extra` we need to provide a corresponding configuration:
 
 > .github/frictionless.yaml
 
