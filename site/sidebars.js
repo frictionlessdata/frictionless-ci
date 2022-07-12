@@ -6,5 +6,6 @@ module.exports = {
     'inquiries',
     'reports',
     'badges',
+    'goodtables-migration',
   ],
 }
