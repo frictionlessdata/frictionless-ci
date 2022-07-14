@@ -11,7 +11,7 @@ Instead of the `goodtables.yml` file, you will need to create a github workflow 
 
 # Example and howto
 
-The website [Dataportals](http://dataportals.org/) used Goodtables in the past to validate their [data](https://github.com/okfn/dataportals.org/tree/master/data) containing all the portalslisted on it.
+The website [Dataportals](http://dataportals.org/) used Goodtables in the past to validate their [data](https://github.com/okfn/dataportals.org/tree/master/data) containing all the portals listed on it.
 The migration steps from Goodtables to the current Frictionless workflow on Dataportals [repository](https://github.com/okfn/dataportals.org) were:
 
 ## 1. Deleted the Goodtables configuration file `goodtables.yml`
@@ -61,9 +61,10 @@ clicking in the tab Actions:
 ## 4. Update of the validation badge
 
 In Goodtables, the badge showing the validation status was located at `https://goodtables.io/badge/github/REPOSITORY-PATH.svg`, in Dataportals case, this path was `https://goodtables.io/badge/github/okfn/dataportals.org.svg`. 
+
 To use the badge from the new workflow you can add a reference to the URL `https://github.com/okfn/dataportals.org/actions/workflows/frictionless.yaml/badge.svg`.
 
-You can see how the Dataportals.org is being used at their  data [README page](https://github.com/okfn/dataportals.org/tree/master/data):
+You can see how the Dataportals.org is being used at their [README page](https://github.com/okfn/dataportals.org/tree/master/data):
 
 ![Status Badge](/img/dataportals-status-badge.png)
 
