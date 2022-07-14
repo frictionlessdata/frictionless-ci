@@ -88,5 +88,3 @@ And then click in the three dots menu at the top right corner:
 Select "Create status badge" and this will open a dialog where you can copy the badge markdown code:
 
 ![Github Workflow Badge Code](/img/github-actions-workflow-run-badge-code.png)
-
-
