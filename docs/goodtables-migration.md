@@ -2,37 +2,65 @@
 title: Migration from Goodtables
 ---
 
-In [Goodtables](https://goodtables.io) you did need to create a `goodtables.yml` file in your repository, otherwise 
-it would validates all your files with extensions as CSV, ODS, XLS or XLSX as described
+[Goodtables](https://goodtables.io) was a data package validation service
+that has been superseded by Frictionless Repository. To use it, it was
+necessary to create a `goodtables.yml` configuration file in your
+repository, otherwise it would validate all your files with as CSV, ODS,
+XLS or XLSX extensions. The instructions for doing that configuration
+are described
 [here](https://github.com/frictionlessdata/goodtables.io/blob/master/docs/configuration/index.md).
 
-Instead of the `goodtables.yml` file, you will need to create a github workflow file `.github/frictionless.yaml` as describe
-[here](/docs/getting-started).
+With Frictionless Repository, instead of the `goodtables.yml` file, you
+will need to create a github workflow file named
+`.github/frictionless.yaml` as describe [here](/docs/getting-started).
 
 # Example and howto
 
-The website [Dataportals](http://dataportals.org/) used Goodtables in the past to validate their [data](https://github.com/okfn/dataportals.org/tree/master/data) containing all the portals listed on it.
-The migration steps from Goodtables to the current Frictionless workflow on Dataportals [repository](https://github.com/okfn/dataportals.org) were:
+The website [Dataportals.org](http://dataportals.org/) has used GoodTables in
+the past to validate their
+[data files](https://github.com/okfn/dataportals.org/tree/master/data),
+which contain all the portals listed on it. The migration steps from
+GoodTables to the current Frictionless workflow on Dataportals.org
+[repository](https://github.com/okfn/dataportals.org) were:
 
-## 1. Deleted the Goodtables configuration file `goodtables.yml`
+## 1. Delete the GoodTables configuration file `goodtables.yml`
 
-## 2. Creation of a file inside the repository at the path `.github/frictionless.yml`
+The configuration file needs to be removed from the repository:
 
-If the folder `.github` does not exist in your repository, you do need to create it first. The content of the `frictionless.yml` file is:
-
+```bash
+git rm goodtables.yml
 ```
+
+## 2. Remove the GoodTables WebHook from repository settings
+
+In the Github repository, go into "Settings", then "WebHooks".
+
+![Github Actions](/img/github-actions.png)
+
+Find the GoodTables.io entry there and hit "Delete".
+
+## 3. Create a file inside the repository at the path `.github/frictionless.yaml`
+
+If the `.github` folder does not yet exist in your repository, you do
+need to create it first. The contents of the `frictionless.yaml` file are:
+
+```yaml
 main:
   tasks:
-    - path: data/datapackage.json
+    - source: data/datapackage.json
+      type: package
 ```
 
-Note that the `path` must point to the place in your repository where the file that you do want to validate is located.
+Note that the `source` must point to the place in your repository where
+the data package file that you do want to validate is located.
 
-## 3. Creation of the configuration file for the Frictionless validation workflow at `.github/workflow/frictionless.yaml`
+## 4. Create the configuration file for the Frictionless validation workflow at `.github/workflow/frictionless.yaml`
 
-This file is were you configure how the validation is going to run as described [here](/docs/configuration). The content of this file for the Dataportals website is:
+This file is where you configure how the validation is going to run as
+described [here](/docs/configuration). The contents of this file for the
+Dataportals.org website are:
 
-```
+```yaml
 name: portals
 
 on:
@@ -53,39 +81,52 @@ jobs:
         uses: frictionlessdata/repository@v1
 ```
 
-After you created this files in your repository, commit (`git commit -a`) them and push the changes to Github (`git push`) you can check the workflow running in your repository
-clicking in the tab Actions:
+After creating these files in your repository, commit (`git commit -a`)
+them and push the changes to Github (`git push`). You can check the
+workflow running in your repository clicking the Actions tab:
 
 ![Github Actions](/img/github-actions.png)
 
-## 4. Update of the validation badge
+## 5. Update the validation badge
 
-In Goodtables, the badge showing the validation status was located at `https://goodtables.io/badge/github/REPOSITORY-PATH.svg`, in Dataportals case, this path was `https://goodtables.io/badge/github/okfn/dataportals.org.svg`. 
+In GoodTables, the badge showing the validation status was located at
+`https://goodtables.io/badge/github/REPOSITORY-PATH.svg`.
+In Dataportals.org's case, the path was
+`https://goodtables.io/badge/github/okfn/dataportals.org.svg`. 
 
-To use the badge from the new workflow you can add a reference to the URL `https://github.com/okfn/dataportals.org/actions/workflows/frictionless.yaml/badge.svg`.
+With Frictionless Repository, in order to use a badge for the new
+workflow you need to create an image referencing a specific URL. In
+Dataportals.org's case this is
+`https://github.com/okfn/dataportals.org/actions/workflows/frictionless.yaml/badge.svg`.
 
-You can see how the Dataportals.org is being used at their [README page](https://github.com/okfn/dataportals.org/tree/master/data):
+You can see how the Dataportals.org repository is using the badge at their
+[data README page](https://github.com/okfn/dataportals.org/tree/master/data):
 
 ![Status Badge](/img/dataportals-status-badge.png)
 
-If you look at the `README.md`file content you will see how this badge is written in Markdown:
+If you look at the `README.md` file contents you will see how this badge is written in Markdown:
 
-```
+```markdown
 [![Data](https://github.com/okfn/dataportals.org/actions/workflows/frictionless.yaml/badge.svg)](https://repository.frictionlessdata.io/report?user=okfn&repo=dataportals.org&flow=portals)
 ```
 
-To get ther markdown code for your frictionless validation workflow, go again to Github Actions tab for your repository:
+You can get the exact code to create the badge for your frictionless
+validation workflow, in markdown format, by going to your repository's
+Github Actions tab:
 
 ![Github Actions](/img/github-actions.png)
 
-Click in the last workflow run:
+Click the last workflow run:
 
 ![Github Workflow Run](/img/github-actions-workflow-run.png)
 
-And then click in the three dots menu at the top right corner:
+And then click the three dots menu at the top right corner:
 
 ![Github Workflow Run Menu](/img/github-actions-workflow-run-menu.png)
 
 Select "Create status badge" and this will open a dialog where you can copy the badge markdown code:
 
 ![Github Workflow Badge Code](/img/github-actions-workflow-run-badge-code.png)
+
+Paste this code at the top (or anywhere else) of your README.md file,
+commit it, and you're done!
