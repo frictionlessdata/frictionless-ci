@@ -1,0 +1,42 @@
+brand:
+  text: Frictionless Repository
+about:
+  text: Data management service that brings continuous data validation to tabular data in your repository via Github Action
+site:
+  favicon: assets/logo.png
+  styles:
+    - style.css
+github:
+  user: frictionlessdata
+  repo: repository
+counter:
+  type: plausible
+  code: repository.frictionlessdata.io
+topics:
+  selector: h2
+links:
+  items:
+    - name: Repository (v1) (docs)
+      path: https://v1.repository.frictionlessdata.io
+    - name: Open Knowledge
+      path: https://okfn.org
+    - name: Frictionless
+      path: https://frictionlessdata.io
+    - name: Support
+      path: https://discord.com/channels/695635777199145130/695635777199145133
+pages:
+  items:
+    - path: index
+      name: Introduction
+      from: README.md
+    - path: docs/service-overview
+    - path: docs/getting-started
+    - path: docs/configuration
+    - path: docs/inquiries
+    - path: docs/reports
+    - path: docs/badges
+    - path: docs/migration
+redirect:
+  items:
+    - prev: https://repository.frictionlessdata.io/docs/introduction
+      next: https://v1.repository.frictionlessdata.io/docs/introduction

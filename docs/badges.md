@@ -1,6 +1,4 @@
----
-title: Badges
----
+# Badges
 
 It's really useful to have validation badges added to your README.md:
 
