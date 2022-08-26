@@ -1,6 +1,4 @@
----
-title: Configuration
----
+# Configuration
 
 Frictionless Repository can work without any additional configuration. It will just validate all the CSV and EXCEL files it can find in your repository (respecting `.gitignore` file).
 

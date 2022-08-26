@@ -29,13 +29,21 @@ pages:
     - path: index
       name: Introduction
       from: README.md
-    - path: docs/service-overview
+    - path: docs/functionality
     - path: docs/getting-started
     - path: docs/configuration
     - path: docs/inquiries
     - path: docs/reports
     - path: docs/badges
+    - path: docs/license
+      name: License
+      from: LICENSE.md
     - path: docs/migration
+      from: MIGRATION.md
+    - path: docs/changelog
+      from: CHANGELOG.md
+    - path: docs/contributing
+      from: CONTRIBUTING.md
 redirect:
   items:
     - prev: https://repository.frictionlessdata.io/docs/introduction

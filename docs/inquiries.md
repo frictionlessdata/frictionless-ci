@@ -1,6 +1,4 @@
----
-title: Inquiries
----
+# Inquiries
 
 As it's described in the [Configuration](./configuration.md) section it's possible to provide custom inquiries in `.github/frictionless.yaml` file. An [Inquiry](https://framework.frictionlessdata.io/docs/guides/framework/inquiry-guide) is a Frictionless Framework concept used to define a validation job.
 
