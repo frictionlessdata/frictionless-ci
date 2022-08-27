@@ -57,5 +57,6 @@ index.html
 package-lock.json
 .env
 dist/
+site/
 tmp/
 .vim
