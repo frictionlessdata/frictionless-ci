@@ -71,7 +71,7 @@ describe('General', () => {
     expect(upload).toHaveBeenNthCalledWith(1, 'inquiry', ['inquiry.json'], '.', any)
     expect(upload).toHaveBeenNthCalledWith(2, 'report', ['report.json'], '.', any)
     expect(core.setFailed).toHaveBeenCalledWith(
-      'Data validation has failed: https://repository.frictionlessdata.io/report/?user=user&repo=repo&flow=flow&run=id'
+      'Data validation has failed: https://repository.frictionlessdata.io/pages/dashboard.html?user=user&repo=repo&flow=flow&run=id'
     )
   })
 
@@ -94,7 +94,7 @@ describe('General', () => {
     expect(upload).toHaveBeenNthCalledWith(1, 'inquiry', ['inquiry.json'], '.', any)
     expect(upload).toHaveBeenNthCalledWith(2, 'report', ['report.json'], '.', any)
     expect(core.setFailed).toHaveBeenCalledWith(
-      'Data validation has failed: https://repository.frictionlessdata.io/report/?user=user&repo=repo&flow=flow&run=id'
+      'Data validation has failed: https://repository.frictionlessdata.io/pages/dashboard.html?user=user&repo=repo&flow=flow&run=id'
     )
   })
 
@@ -116,7 +116,7 @@ describe('General', () => {
     expect(upload).toHaveBeenNthCalledWith(1, 'inquiry', ['inquiry.json'], '.', any)
     expect(upload).toHaveBeenNthCalledWith(2, 'report', ['report.json'], '.', any)
     expect(core.setFailed).toHaveBeenCalledWith(
-      'Data validation has failed: https://repository.frictionlessdata.io/report/?user=user&repo=repo&flow=flow&run=id'
+      'Data validation has failed: https://repository.frictionlessdata.io/pages/dashboard.html?user=user&repo=repo&flow=flow&run=id'
     )
   })
 
@@ -146,7 +146,7 @@ describe('General', () => {
     expect(upload).toHaveBeenNthCalledWith(1, 'inquiry', ['inquiry.json'], '.', any)
     expect(upload).toHaveBeenNthCalledWith(2, 'report', ['report.json'], '.', any)
     expect(core.setFailed).toHaveBeenCalledWith(
-      'Data validation has failed: https://repository.frictionlessdata.io/report/?user=user&repo=repo&flow=flow&run=id'
+      'Data validation has failed: https://repository.frictionlessdata.io/pages/dashboard.html?user=user&repo=repo&flow=flow&run=id'
     )
   })
 
@@ -168,7 +168,7 @@ describe('General', () => {
     expect(upload).toHaveBeenNthCalledWith(1, 'inquiry', ['inquiry.json'], '.', any)
     expect(upload).toHaveBeenNthCalledWith(2, 'report', ['report.json'], '.', any)
     expect(core.setFailed).toHaveBeenCalledWith(
-      'Data validation has failed: https://repository.frictionlessdata.io/report/?user=user&repo=repo&flow=flow&run=id'
+      'Data validation has failed: https://repository.frictionlessdata.io/pages/dashboard.html?user=user&repo=repo&flow=flow&run=id'
     )
   })
 
@@ -198,7 +198,7 @@ describe('General', () => {
     expect(upload).toHaveBeenNthCalledWith(1, 'inquiry', ['inquiry.json'], '.', any)
     expect(upload).toHaveBeenNthCalledWith(2, 'report', ['report.json'], '.', any)
     expect(core.info).toHaveBeenCalledWith(
-      'Data validation has passed: https://repository.frictionlessdata.io/report/?user=user&repo=repo&flow=flow&run=id'
+      'Data validation has passed: https://repository.frictionlessdata.io/pages/dashboard.html?user=user&repo=repo&flow=flow&run=id'
     )
   })
 })
