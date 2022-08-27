@@ -2,6 +2,11 @@
 
 ## From v1 to v2
 
+There are few changes from v1 to v2:
+
+- Please read the [Configuration](configuration.html) guide
+- Please read the [Inquiries](inquiries.html) guide
+
 ## From goodtables.io
 
 [Goodtables](https://goodtables.io) was a data package validation service

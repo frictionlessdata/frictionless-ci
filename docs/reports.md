@@ -6,4 +6,4 @@ As a result of validation you will get a validation report. It's provided in a v
 
 ![Example](../assets/example.png)
 
-It's described in the [Getting Started](getting-started.md#usage) guide how to find the report after you have committed a data. Also, it's recommended to set up a [Badge](badges.md) to have a quick link to your reports.
+It's described in the [Getting Started](getting-started.html) guide how to find the report after you have committed a data. Also, it's recommended to set up a [Badge](badges.html) to have a quick link to your reports.

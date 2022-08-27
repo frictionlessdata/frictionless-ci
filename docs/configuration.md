@@ -1,10 +1,47 @@
 # Configuration
 
-Frictionless Repository can work without any additional configuration. It will validate all the CSV, EXCEL and JSONL files it can find in your repository (respecting `.gitignore` file) or all the DATA PACKAGE and DATA RESOURCE descriptors if they present.
+Frictionless Repository can work without any additional configuration. It will validate all the CSV, EXCEL and JSONL files it can find in your repository (respecting `.gitignore` file) or all the DATA PACKAGE and DATA RESOURCE descriptors if they present. Note that if data packges are found all other type of sources are ignored. The same for data resources if not data packages are found.
 
-## Creating Inquiry
+## Search Patterns
 
-You can create an Inquiry file in your Github repository and use it in the action configuration to have more control over validation. An Inqiury tells Frictionless Repository how validate the data. For example:
+It's possible to configure how Frictionless Repository searchs for the validation sources. Github Workflow accepts parameters called `packages`, `resources`, and `tables` expecting a GLOB pattern pointing to data sources. See [Getting Started](http://localhost:7000/docs/getting-started.html) guide for more inpormation on how to setup workflows.
+
+We can configure the GLOB patterns used for searching packages:
+
+> .github/workflows/(name).yaml
+
+```yaml tabs=YAML
+- name: Validate data
+  uses: frictionlessdata/repository@v1
+  with:
+    packages: "path/to/*.package.yaml"
+```
+
+Or for searching resources:
+
+```yaml tabs=YAML
+- name: Validate data
+  uses: frictionlessdata/repository@v1
+  with:
+    resources: "path/to/*.resource.yaml"
+```
+
+Or for searching tables:
+
+```yaml tabs=YAML
+- name: Validate data
+  uses: frictionlessdata/repository@v1
+  with:
+    tables: "path/to/**/*.csv"
+```
+
+Read more about [GLOB Patterns](https://en.wikipedia.org/wiki/Glob_(programming)) in this article.
+
+## Validation Inquiry
+
+### Creating Inquiry
+
+You can create an Inquiry file in your Github repository and use it in the action configuration to have more granular control over validation. An Inqiury tells Frictionless Repository how validate the data. For example:
 
 > path/to/inquiry.yaml
 
@@ -14,7 +51,7 @@ tasks:
   - path: data/invalid.csv
 ```
 
-The inquiry descriptor is a Frictionless Framework's [Inquiry](inquiries.html) so you can use whatever is possible to use for the Frictionless Framework validation. Here is a more complex example:
+The inquiry descriptor is a Frictionless Framework's Inquiry so you can use whatever is possible to use for the Frictionless Framework validation. Here is a more complex example:
 
 ```yaml tabs=YAML
 tasks:
@@ -32,14 +69,14 @@ tasks:
 
 Note, that you can place this file anywhere in your repository or create multiple inquiries; to enable it you need to use the `inquiry` parameter in your workflow as described in the next section.
 
-## Testing Inquiry
+### Testing Inquiry
 
 It's quite easy to test your inquiry locally.
 
 First of all, install Frictionless Framework:
 
 ```bash tabs=CLI
-pip install frictionless[excel,json]
+pip install frictionless[excel,json] --pre
 ```
 
 Secondly, run the `validate` command against your inquiry:
@@ -50,7 +87,7 @@ frictionless validate path/to/inquiry.yaml
 
 As a result, you will get a textual validation report with the same details as you will get on every Frictionless Repository run.
 
-## Enabling Inqiury
+### Enabling Inqiury
 
 Frictionless Repository step as a part of Github Workflow accepts a parameter called `inquiry`. To use an inquiry from the section above set this parameter:
 
@@ -63,13 +100,9 @@ Frictionless Repository step as a part of Github Workflow accepts a parameter ca
     inquiry: path/to/inquiry.yaml
 ```
 
-In this case the inquiry from `path/to/inquiry.yaml` will be use to guide the validation. As said, if this parameter is not provided Frictionless Repository will automatically find and validate all CSV, EXCEL, and JSONL files in the repository or all DATA PACKAGE and DATA RESOURCE descriptors if they present.
+In this case the inquiry from `path/to/inquiry.yaml` will be used as a validation source.
 
-## Using Patterns
-
-It's possible to configure Frictionless Repository validation without creating an inqiury file.
-
-
+Read more about [Inquiries](inquiries.html) in this article.
 
 ## Validation Strategy
 
@@ -158,7 +191,7 @@ tasks:
   - path: animals/table2.csv
 ```
 
-Don't forget that we use Frictionless Framework's [Inquiry](./inquiries.md) that gives us even more flexibility. For example, you can write quite complex tasks logic and combine it with your single or multiple workflows.
+Don't forget that we use Frictionless Framework's Inquiry that gives us even more flexibility. For example, you can write quite complex tasks logic and combine it with your single or multiple workflows.
 
 ### Complex Workflow
 

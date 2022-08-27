@@ -1,111 +1,104 @@
 # Inquiries
 
-As it's described in the [Configuration](./configuration.md) section it's possible to provide custom inquiries in `.github/frictionless.yaml` file. An [Inquiry](https://framework.frictionlessdata.io/docs/guides/framework/inquiry-guide) is a Frictionless Framework concept used to define a validation job.
+As it's described in the [Configuration](configuration.html) section it's possible to provide custom inquiries in `.github/frictionless.yaml` file. An [Inquiry](https://framework.frictionlessdata.io/docs/framework/inquiry.html) is a Frictionless Framework concept used to define a validation job.
 
 ## File Paths
 
 The simplest way to customize an inquiry is to set validation paths:
 
-> .github/frictionless.yaml
+> path/to/inquiry.yaml
 
-```yaml
-main:
-  tasks:
-    - path: data/table.csv
-    - path: data/table.xls
+```yaml tabs=YAML
+tasks:
+  - path: data/table.csv
+  - path: data/table.xls
 ```
-
-Note that by default it will create a task for every file found by glob `**/*.{csv,tsv,xls,xlsx}` respecting `.gitignore`.
 
 ## File Details
 
-A task can have any parameters accepted by the [Resource](https://framework.frictionlessdata.io/docs/guides/framework/resource-guide) class so you can provide scheme, format, etc:
+A task can have many parameters accepted by the [Resource](https://framework.frictionlessdata.io/docs/framework/resource.html) class so you can provide scheme, format, etc:
 
-> .github/frictionless.yaml
+> path/to/inquiry.yaml
 
-```yaml
-main:
-  tasks:
-    - path: data/table.csv.zip
-      scheme: file
-      format: csv
-      hashing: sha256
-      encoging: utf-8
-      compression: zip
+```yaml tabs=YAML
+tasks:
+  - path: data/table.csv.zip
+    scheme: file
+    format: csv
+    encoging: utf-8
+    compression: zip
 ```
 
 By default, Fricitonless tries to infer all these parameters.
 
 ## Table Details
 
-Let's provide a layout and a schema as it's described in [Resource](https://framework.frictionlessdata.io/docs/guides/framework/resource-guide):
+Let's provide a dialect and a schema as it's described in [Resource](https://framework.frictionlessdata.io/docs/framework/resource.html):
 
-> .github/frictionless.yaml
+> path/to/inquiry.yaml
 
-```yaml
-main:
-  tasks:
-    - path: table.csv
-      dialect:
+```yaml tabs=YAML
+tasks:
+  - path: table.csv
+    dialect:
+      headerRows: [1,2]
+      csv:
         separator: ;
-      layout:
-        headerRows: [1,2]
-      schema:
-        fields:
-          - name: currency
-            type: string
-          - name: rate
-            type: number
-            groupChar: ','
-            constraints:
-              maximum: 100
+    schema:
+      fields:
+        - name: currency
+          type: string
+        - name: rate
+          type: number
+          groupChar: ','
+          constraints:
+            maximum: 100
 ```
 
-You can also provide dialect, layout, or schema as a file path e.g. `schema: schema.yaml`.
+You can also provide dialect, or schema as a file path e.g. `schema: schema.yaml`.
 
 ## Validation Details
 
-It's possible to configure how the validation happens as it's in [Errors Configuration](https://framework.frictionlessdata.io/docs/guides/validation-guide#pickskip-errors):
+It's possible to configure how the validation happens as it's in [Checklist](https://framework.frictionlessdata.io/docs/framework/checklist.html):
 
-> .github/frictionless.yaml
+> path/to/inquiry.yaml
 
-```yaml
-main:
-  tasks:
-    - path: table.csv
+```yaml tabs=YAML
+tasks:
+  - path: table.csv
+    checklsit:
       pickErrors: ['#header']
       skipErrors: ['#row']
-      limitErrors: 10
-      offsetErrors: 10
-```
-
-And provide additional [validation checks](https://framework.frictionlessdata.io/docs/guides/validation-checks):
-
-> .github/frictionless.yaml
-
-```yaml
-main:
-  tasks:
-    - path: table.csv
       checks:
-        - code: duplicate-row
-        - code: forbidden-value
-          fieldName: country
-          values:
-            - not-existent
+        - type: ascii-value
+        - type: row-constraint
+          formula: id>1
 ```
 
-## Validating a Package
+Please consult with [Validation Checks](https://framework.frictionlessdata.io/docs/checks/baseline.html) for available checks.
+
+## Validating Resource
+
+It's possible to validate a data resource:
+
+> path/to/inquiry.yaml
+
+```yaml tabs=YAML
+tasks:
+  - resource: data/dataresource.json
+```
+
+Read more about [Resource](https://framework.frictionlessdata.io/docs/framework/resource.html) in the Frictionless Framework docs.
+
+## Validating Package
 
 It's possible to validate a data package:
 
-> .github/frictionless.yaml
+> path/to/inquiry.yaml
 
-```yaml
-main:
-  tasks:
-    - source: data/datapackage.json
-      type: package
+```yaml tabs=YAML
+tasks:
+  - package: data/datapackage.json
 ```
 
-Read more about [Inqiury](https://framework.frictionlessdata.io/docs/framework/inquiry.html) in the Frictionless Framework docs.
+Read more about [Package](https://framework.frictionlessdata.io/docs/framework/package.html) in the Frictionless Framework docs.
