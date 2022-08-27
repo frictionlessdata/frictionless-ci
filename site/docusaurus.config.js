@@ -35,7 +35,7 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          path: '../docs',
+          path: 'docs',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
             'https://github.com/frictionlessdata/frictionless-py/edit/master/docs/',
@@ -50,6 +50,14 @@ module.exports = {
     ],
   ],
   themeConfig: {
+    announcementBar: {
+      id: 'support_us',
+      content:
+        'The latest version is <a href="https://repository.frictionlessdata.io/">Frictionless Repository (v2)</a>',
+      backgroundColor: '#fafbfc',
+      textColor: '#091E42',
+      isCloseable: false,
+    },
     sidebarCollapsible: true,
     image: 'img/docusaurus.png',
     prism: {
