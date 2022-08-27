@@ -44,6 +44,7 @@ pages:
       from: CHANGELOG.md
     - path: docs/contributing
       from: CONTRIBUTING.md
+    - path: pages/dashboard
 redirect:
   items:
     - prev: https://repository.frictionlessdata.io/docs/introduction

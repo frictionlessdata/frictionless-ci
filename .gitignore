@@ -49,6 +49,7 @@ jspm_packages
 # Livemark
 blog/**/*.html
 docs/**/*.html
+pages/**/*.html
 index.html
 404.html
 
