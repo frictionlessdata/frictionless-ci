@@ -107,3 +107,5 @@ main:
     - source: data/datapackage.json
       type: package
 ```
+
+Read more about [Inqiury](https://framework.frictionlessdata.io/docs/framework/inquiry.html) in the Frictionless Framework docs.

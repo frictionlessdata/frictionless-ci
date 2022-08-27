@@ -9,5 +9,10 @@ runs:
   image: Dockerfile
 inputs:
   inquiry:
-    description: A default inquiry's property name
-    default: main
+    description: A path to an Inquiry
+  packages:
+    description: A glob to data package descriptors
+  resources:
+    description: A glob to data resource descriptors
+  tables:
+    description: A glob to data tables
