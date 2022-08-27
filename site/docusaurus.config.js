@@ -96,6 +96,12 @@ module.exports = {
           className: 'header-mainsite-link',
         },
         {
+          to: 'docs/introduction',
+          label: 'v1',
+          position: 'right',
+          className: 'header-version-link',
+        },
+        {
           href: 'https://github.com/frictionlessdata/repository',
           position: 'right',
           className: 'header-github-link',
