@@ -46,12 +46,16 @@ jspm_packages
 # Yarn Integrity file
 .yarn-integrity
 
+# Livemark
+blog/**/*.html
+docs/**/*.html
+pages/**/*.html
+index.html
+404.html
+
 # Extra
 package-lock.json
 .env
-# assets/
-# static/
 dist/
-# lib/
 tmp/
 .vim
