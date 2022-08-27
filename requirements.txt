@@ -1,1 +1,1 @@
-frictionless[excel,json]==4.*
+frictionless[excel,json]==5.0.0b7

@@ -1,4 +1,4 @@
-# Frictionless Repository
+# Frictionless Repository (v2)
 
 [![Build](https://img.shields.io/github/workflow/status/frictionlessdata/repository/general/main)](https://github.com/frictionlessdata/repository/actions)
 [![Coverage](https://img.shields.io/codecov/c/github/frictionlessdata/repository/main)](https://codecov.io/gh/frictionlessdata/repository)

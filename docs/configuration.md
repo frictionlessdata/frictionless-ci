@@ -1,66 +1,108 @@
----
-title: Configuration
----
+# Configuration
 
-Frictionless Repository can work without any additional configuration. It will just validate all the CSV and EXCEL files it can find in your repository (respecting `.gitignore` file).
+Frictionless Repository can work without any additional configuration. It will validate all the CSV, EXCEL and JSONL files it can find in your repository (respecting `.gitignore` file) or all the DATA PACKAGE and DATA RESOURCE descriptors if they present. Note that if data packges are found all other type of sources are ignored. The same for data resources if not data packages are found.
 
-## Configuration File
+## Search Patterns
 
-You can add a `.github/frictionless.yaml` file to your Github repository to provide an additional configuration. This file is a mapping in a form of `inquiry name: inquiry descriptor`. It's easier to understand using an example:
+It's possible to configure how Frictionless Repository searchs for the validation sources. Github Workflow accepts parameters called `packages`, `resources`, and `tables` expecting a GLOB pattern pointing to data sources. See [Getting Started](http://localhost:7000/docs/getting-started.html) guide for more inpormation on how to setup workflows.
 
-> .github/frictionless.yaml
-
-```yaml
-main:
-  tasks:
-    - path: data/valid.csv
-    - path: data/invalid.csv
-```
-
-The inquiry descriptor is a Frictionless Framework's [Inquiry](./inquiries.md) so you can use whatever is possible to use for the Frictionless Framework validation. Here is a more complex example:
-
-> https://github.com/roll/flat-demo-bitcoin-price/blob/main/.github/frictionless.yaml
-
-```yaml
-main:
-  tasks:
-    - path: btc-price-postprocessed.json
-      schema:
-        fields:
-          - name: currency
-            type: string
-          - name: bitcoinRate
-            type: number
-            groupChar: ','
-            constraints:
-              maximum: 40000
-```
-
-Note, that we used the `main` inquiry name because it's a default inquiry. You can have multiple inquiries in your repository setting the `inquiry` parameter in your workflow.
-
-## Inquiry Parameter
-
-Frictionless Repository step as a part of Github Workflow accepts only one parameter called `inquiry`. Here is an example:
+We can configure the GLOB patterns used for searching packages:
 
 > .github/workflows/(name).yaml
 
-```yaml
+```yaml tabs=YAML
 - name: Validate data
   uses: frictionlessdata/repository@v1
   with:
-    inquiry: extra
+    packages: "path/to/*.package.yaml"
 ```
 
-By default, the `inquiry` parameter is set to `main`. So the examples in the previous section will work for any step without the `inquiry` parameter or when it's set to `main`. When we have, as in our example, `inquiry: extra` we need to provide a corresponding configuration:
+Or for searching resources:
 
-> .github/frictionless.yaml
-
-```yaml
-extra:
-  tasks:
-    - path: data/table.csv
-    - path: data/other.csv
+```yaml tabs=YAML
+- name: Validate data
+  uses: frictionlessdata/repository@v1
+  with:
+    resources: "path/to/*.resource.yaml"
 ```
+
+Or for searching tables:
+
+```yaml tabs=YAML
+- name: Validate data
+  uses: frictionlessdata/repository@v1
+  with:
+    tables: "path/to/**/*.csv"
+```
+
+Read more about [GLOB Patterns](https://en.wikipedia.org/wiki/Glob_(programming)) in this article.
+
+## Validation Inquiry
+
+### Creating Inquiry
+
+You can create an Inquiry file in your Github repository and use it in the action configuration to have more granular control over validation. An Inqiury tells Frictionless Repository how validate the data. For example:
+
+> path/to/inquiry.yaml
+
+```yaml tabs=YAML
+tasks:
+  - path: data/valid.csv
+  - path: data/invalid.csv
+```
+
+The inquiry descriptor is a Frictionless Framework's Inquiry so you can use whatever is possible to use for the Frictionless Framework validation. Here is a more complex example:
+
+```yaml tabs=YAML
+tasks:
+  - path: btc-price-postprocessed.json
+    schema:
+      fields:
+        - name: currency
+          type: string
+        - name: bitcoinRate
+          type: number
+          groupChar: ','
+          constraints:
+            maximum: 40000
+```
+
+Note, that you can place this file anywhere in your repository or create multiple inquiries; to enable it you need to use the `inquiry` parameter in your workflow as described in the next section.
+
+### Testing Inquiry
+
+It's quite easy to test your inquiry locally.
+
+First of all, install Frictionless Framework:
+
+```bash tabs=CLI
+pip install frictionless[excel,json] --pre
+```
+
+Secondly, run the `validate` command against your inquiry:
+
+```bash tabs=CLI
+frictionless validate path/to/inquiry.yaml
+```
+
+As a result, you will get a textual validation report with the same details as you will get on every Frictionless Repository run.
+
+### Enabling Inqiury
+
+Frictionless Repository step as a part of Github Workflow accepts a parameter called `inquiry`. To use an inquiry from the section above set this parameter:
+
+> .github/workflows/(name).yaml
+
+```yaml tabs=YAML
+- name: Validate data
+  uses: frictionlessdata/repository@v1
+  with:
+    inquiry: path/to/inquiry.yaml
+```
+
+In this case the inquiry from `path/to/inquiry.yaml` will be used as a validation source.
+
+Read more about [Inquiries](inquiries.html) in this article.
 
 ## Validation Strategy
 
@@ -72,7 +114,7 @@ The simplest way to use Frictionless Repository is to create a single workflow c
 
 > .github/workflows/frictionless.yaml
 
-```yaml
+```yaml tabs=YAML
 name: frictionless
 
 # ...
@@ -95,7 +137,7 @@ You have a few groups of independent data or interested in more sophisticated lo
 
 > .github/workflows/people.yaml
 
-```yaml
+```yaml tabs=YAML
 name: people
 
 # ...
@@ -109,7 +151,7 @@ jobs:
       - name: Validate data
         uses: frictionlessdata/repository@v1
         with:
-            inquiry: people
+            inquiry: path/to/people.inquiry.yaml
 ```
 
 > .github/workflows/animals.yaml
@@ -128,24 +170,28 @@ jobs:
       - name: Validate data
         uses: frictionlessdata/repository@v1
         with:
-            inquiry: animals
+            inquiry: path/to/animals.inquiry.yaml
 ```
 
-The only missing part in this case is the [Configuration File](#configuration-file) that will tell Frictionless what are these inquiries:
+In this case, we need to create two inquiry files:
 
-> .github/frictionless.yaml
+> path/to/people.inquiry.yaml
 
-```yaml
-people:
-  tasks:
-    - source: people/*.csv
-
-animals:
-  tasks:
-    - source: animals/*.csv
+```yaml tabs=YAML
+tasks:
+  - path: people/table1.csv
+  - path: people/table2.csv
 ```
 
-Don't forget that we use Frictionless Framework's [Inquiry](./inquiries.md) that gives us even more flexibility. For example, you can write quite complex tasks logic and combine it with your single or multiple workflows.
+> path/to/animals.inquiry.yaml
+
+```yaml tabls=YAML
+tasks:
+  - path: animals/table1.csv
+  - path: animals/table2.csv
+```
+
+Don't forget that we use Frictionless Framework's Inquiry that gives us even more flexibility. For example, you can write quite complex tasks logic and combine it with your single or multiple workflows.
 
 ### Complex Workflow
 
