@@ -63,7 +63,7 @@ describe('General', () => {
     // Validation
     expect(await readJson(`${workdir.path}/report.json`)).toEqual({ valid: false })
     expect(await readJson(`${workdir.path}/inquiry.json`)).toEqual({
-      tasks: [{ source: 'invalid.csv' }, { source: 'valid.csv' }],
+      tasks: [{ path: 'invalid.csv' }, { path: 'valid.csv' }],
     })
 
     // Integration
@@ -86,7 +86,7 @@ describe('General', () => {
     // Validation
     expect(await readJson(`${workdir.path}/report.json`)).toEqual({ valid: false })
     expect(await readJson(`${workdir.path}/inquiry.json`)).toEqual({
-      tasks: [{ source: 'invalid.resource.json' }, { source: 'valid.resource.json' }],
+      tasks: [{ resource: 'invalid.resource.json' }, { resource: 'valid.resource.json' }],
     })
 
     // Integration
@@ -108,7 +108,7 @@ describe('General', () => {
     // Validation
     expect(await readJson(`${workdir.path}/report.json`)).toEqual({ valid: false })
     expect(await readJson(`${workdir.path}/inquiry.json`)).toEqual({
-      tasks: [{ source: 'datapackage.yaml' }],
+      tasks: [{ package: 'datapackage.yaml' }],
     })
 
     // Integration
@@ -127,11 +127,12 @@ describe('General', () => {
     )
   })
 
-  it('config', async () => {
+  it('inquiry', async () => {
     // Action
-    await copy('data/frictionless.yaml', `${workdir.path}/.github/frictionless.yaml`)
+    await copy('data/inquiry.yaml', `${workdir.path}/inquiry.yaml`)
     await copy('data/invalid.csv', `${workdir.path}/invalid.csv`)
     await copy('data/valid.csv', `${workdir.path}/valid.csv`)
+    inputs.inquiry = `${workdir.path}/inquiry.yaml`
     await action()
 
     // Validation
@@ -151,9 +152,9 @@ describe('General', () => {
 
   it('inputs', async () => {
     // Action
-    await copy('data/frictionless.yaml', `${workdir.path}/.github/frictionless.yaml`)
+    await copy('data/inquiry.extra.yaml', `${workdir.path}/inquiry.extra.yaml`)
     await copy('data/invalid.csv', `${workdir.path}/invalid.csv`)
-    inputs.inquiry = 'extra'
+    inputs.inquiry = `${workdir.path}/inquiry.extra.yaml`
     await action()
 
     // Validation
@@ -172,10 +173,11 @@ describe('General', () => {
   })
 
   it('inputs bad', async () => {
-    await copy('data/frictionless.yaml', `${workdir.path}/.github/frictionless.yaml`)
     inputs.inquiry = 'bad'
     await action()
-    expect(core.setFailed).toHaveBeenCalledWith('Cannot read inquiry: not existent "bad"')
+    expect(core.setFailed).toHaveBeenCalledWith(
+      "Cannot read inquiry: ENOENT: no such file or directory, open 'bad'"
+    )
   })
 
   it('valid', async () => {
@@ -188,7 +190,7 @@ describe('General', () => {
     // Validation
     expect(await readJson(`${workdir.path}/report.json`)).toEqual({ valid: true })
     expect(await readJson(`${workdir.path}/inquiry.json`)).toEqual({
-      tasks: [{ source: 'valid.csv' }],
+      tasks: [{ path: 'valid.csv' }],
     })
 
     // Integration

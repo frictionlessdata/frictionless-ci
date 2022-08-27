@@ -33,7 +33,7 @@ jobs:
           lfs: true # add this to download LFS files
           submodules: true # add this to download submodules
       - name: Validate data
-        uses: frictionlessdata/repository@v1
+        uses: frictionlessdata/repository@v2
 ```
 
 ### Existent Workflow
@@ -44,7 +44,7 @@ Just add this step to an existent workflow:
 
 ```yaml
 - name: Validate data
-  uses: frictionlessdata/repository@v1
+  uses: frictionlessdata/repository@v2
 ```
 
 ## Usage
