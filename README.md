@@ -4,7 +4,7 @@
 [![Coverage](https://img.shields.io/codecov/c/github/frictionlessdata/repository/main)](https://codecov.io/gh/frictionlessdata/repository)
 [![Release](https://img.shields.io/github/v/release/frictionlessdata/repository)](https://github.com/frictionlessdata/repository/releases)
 [![Codebase](https://img.shields.io/badge/codebase-github-brightgreen)](https://github.com/frictionlessdata/repository)
-[![Support](https://img.shields.io/badge/support-discord-brightgreen)](https://discord.com/channels/695635777199145130/695635777199145133)
+[![Support](https://img.shields.io/badge/support-slack-brightgreen)](https://join.slack.com/t/frictionlessdata/shared_invite/zt-17kpbffnm-tRfDW_wJgOw8tJVLvZTrBg)
 
 Data management service that brings continuous data validation to tabular data in your repository via Github Action
 
