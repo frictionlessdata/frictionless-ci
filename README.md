@@ -32,4 +32,3 @@ Data management service that brings continuous data validation to tabular data i
 
 Please visit our documentation portal:
 - https://repository.frictionlessdata.io
-
