@@ -4,7 +4,7 @@ Frictionless Repository can work without any additional configuration. It will v
 
 ## Search Patterns
 
-It's possible to configure how Frictionless Repository searchs for the validation sources. Github Workflow accepts parameters called `packages`, `resources`, and `tables` expecting a GLOB pattern pointing to data sources. See [Getting Started](http://localhost:7000/docs/getting-started.html) guide for more inpormation on how to setup workflows.
+It's possible to configure how Frictionless Repository searchs for the validation sources. Github Workflow accepts parameters called `packages`, `resources`, and `tables` expecting a GLOB pattern pointing to data sources. See [Getting Started](docs/getting-started.html) guide for more inpormation on how to setup workflows.
 
 We can configure the GLOB patterns used for searching packages:
 
