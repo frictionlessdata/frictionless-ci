@@ -10,7 +10,7 @@ Data management service that brings continuous data validation to tabular data i
 
 ## Purpose
 
-- **Continous Data Validation**: With Frictionless Repository you can ensure the quality of your data. This Github Action will report any problems with your data like bad header or missing cells.
+- **Continuous Data Validation**: With Frictionless Repository you can ensure the quality of your data. This Github Action will report any problems with your data like bad header or missing cells.
 
 ## Features
 
