@@ -6,7 +6,7 @@ COPY . .
 
 RUN \
   curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
-  apt-get install -y nodejs && \
+  apt-get install -y nodejs npm && \
   npm install --production && \
   pip install --upgrade -r requirements.txt
 
