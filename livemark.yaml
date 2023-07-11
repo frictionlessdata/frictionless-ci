@@ -8,7 +8,7 @@ site:
     - style.css
 github:
   user: frictionlessdata
-  repo: repository
+  repo: frictionless-ci
 counter:
   type: plausible
   code: repository.frictionlessdata.io
