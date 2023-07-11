@@ -1,6 +1,6 @@
 {
   "name": "frictionless-repository",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "Data management service that brings continuous data validation to tabular data in your repository via Github Action",
   "main": "lib/index.js",
   "engines": {
