@@ -12,7 +12,7 @@ We can configure the GLOB patterns used for searching packages:
 
 ```yaml tabs=YAML
 - name: Validate data
-  uses: frictionlessdata/repository@v2
+  uses: frictionlessdata/frictionless-ci@v2
   with:
     packages: "path/to/*.package.yaml"
 ```
@@ -21,7 +21,7 @@ Or for searching resources:
 
 ```yaml tabs=YAML
 - name: Validate data
-  uses: frictionlessdata/repository@v2
+  uses: frictionlessdata/frictionless-ci@v2
   with:
     resources: "path/to/*.resource.yaml"
 ```
@@ -30,7 +30,7 @@ Or for searching tables:
 
 ```yaml tabs=YAML
 - name: Validate data
-  uses: frictionlessdata/repository@v2
+  uses: frictionlessdata/frictionless-ci@v2
   with:
     tables: "path/to/**/*.csv"
 ```
@@ -95,7 +95,7 @@ Frictionless Repository step as a part of Github Workflow accepts a parameter ca
 
 ```yaml tabs=YAML
 - name: Validate data
-  uses: frictionlessdata/repository@v2
+  uses: frictionlessdata/frictionless-ci@v2
   with:
     inquiry: path/to/inquiry.yaml
 ```
@@ -126,7 +126,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Validate data
-        uses: frictionlessdata/repository@v2
+        uses: frictionlessdata/frictionless-ci@v2
 ```
 
 Using this setup you will have a single "Frictionless" badge that you can add to your README.md file.
@@ -149,7 +149,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Validate data
-        uses: frictionlessdata/repository@v2
+        uses: frictionlessdata/frictionless-ci@v2
         with:
             inquiry: path/to/people.inquiry.yaml
 ```
@@ -168,7 +168,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Validate data
-        uses: frictionlessdata/repository@v2
+        uses: frictionlessdata/frictionless-ci@v2
         with:
             inquiry: path/to/animals.inquiry.yaml
 ```
@@ -225,7 +225,7 @@ jobs:
           postprocess: postprocess.js # A postprocessing javascript or typescript file written in Deno
       # The fourth step is validation using Frictionless Repository
       - name: Frictionless Repository
-        uses: frictionlessdata/repository@v2
+        uses: frictionlessdata/frictionless-ci@v2
 ```
 
 ## Validation Triggers

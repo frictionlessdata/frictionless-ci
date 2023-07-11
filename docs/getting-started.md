@@ -33,7 +33,7 @@ jobs:
           lfs: true # add this to download LFS files
           submodules: true # add this to download submodules
       - name: Validate data
-        uses: frictionlessdata/repository@v2
+        uses: frictionlessdata/frictionless-ci@v2
 ```
 
 ### Existent Workflow

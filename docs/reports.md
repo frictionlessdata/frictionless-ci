@@ -2,7 +2,7 @@
 
 As a result of validation you will get a validation report. It's provided in a visual form and self-explanatory. You can click on the error name badge to see the error's details.
 
-> Explore a [Live Example](https://repository.frictionlessdata.io/report/?user=frictionlessdata&repo=repository-demo&flow=experimental) of this report
+> Explore a [Live Example](https://repository.frictionlessdata.io/report/?user=frictionlessdata&repo=frictionless-ci-demo&flow=experimental) of this report
 
 ![Example](../assets/example.png)
 

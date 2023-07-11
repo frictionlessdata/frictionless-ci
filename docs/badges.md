@@ -2,7 +2,7 @@
 
 It's really useful to have validation badges added to your README.md:
 
-> Explore a [Live Example](https://github.com/frictionlessdata/repository-demo) of this repo
+> Explore a [Live Example](https://github.com/frictionlessdata/frictionless-ci-demo) of this repo
 
 ![Badges](../assets/badges.png)
 
