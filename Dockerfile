@@ -5,8 +5,8 @@ WORKDIR /repository
 COPY . .
 
 RUN \
-  curl -fsSL https://deb.nodesource.com/setup_14.x | bash - && \
-  apt-get install -y nodejs npm && \
+  curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
+  apt-get install -y nodejs && \
   npm install --production && \
   pip install --upgrade -r requirements.txt
 

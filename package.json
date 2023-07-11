@@ -3,6 +3,9 @@
   "version": "2.1.1",
   "description": "Data management service that brings continuous data validation to tabular data in your repository via Github Action",
   "main": "lib/index.js",
+  "engines": {
+    "node": "^16.0.0"
+  },
   "scripts": {
     "coverage": "sensible-browser coverage/index.html",
     "format": "prettier --write '{lib,test}/**/*.js*' && eslint --fix '{lib,test}/**/*.js*'",
