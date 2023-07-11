@@ -1,1 +1,1 @@
-frictionless[excel,json]==5.0.0b7
+frictionless[ckan,csv,excel,json,pandas,sql]==5.15.0
