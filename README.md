@@ -1,9 +1,9 @@
-# Frictionless Repository
+# frictionless-ci
 
-[![Build](https://img.shields.io/github/actions/workflow/status/frictionlessdata/repository/general.yaml?branch=main)](https://github.com/frictionlessdata/repository/actions)
-[![Coverage](https://img.shields.io/codecov/c/github/frictionlessdata/repository/main)](https://codecov.io/gh/frictionlessdata/repository)
-[![Release](https://img.shields.io/github/v/release/frictionlessdata/repository)](https://github.com/frictionlessdata/repository/releases)
-[![Codebase](https://img.shields.io/badge/codebase-github-brightgreen)](https://github.com/frictionlessdata/repository)
+[![Build](https://img.shields.io/github/actions/workflow/status/frictionlessdata/repository/general.yaml?branch=main)](https://github.com/frictionlessdata/frictionless-ci/actions)
+[![Coverage](https://img.shields.io/codecov/c/github/frictionlessdata/frictionless-ci/main)](https://codecov.io/gh/frictionlessdata/frictionless-ci)
+[![Release](https://img.shields.io/github/v/release/frictionlessdata/frictionless-ci)](https://github.com/frictionlessdata/frictionless-ci/releases)
+[![Codebase](https://img.shields.io/badge/codebase-github-brightgreen)](https://github.com/frictionlessdata/frictionless-ci)
 [![Support](https://img.shields.io/badge/support-slack-brightgreen)](https://join.slack.com/t/frictionlessdata/shared_invite/zt-17kpbffnm-tRfDW_wJgOw8tJVLvZTrBg)
 
 Data management service that brings continuous data validation to tabular data in your repository via Github Action
