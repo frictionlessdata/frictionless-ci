@@ -8,6 +8,6 @@ RUN \
   curl -fsSL https://deb.nodesource.com/setup_14.x | bash - && \
   apt-get install -y nodejs npm && \
   npm install --production && \
-  pip install -r requirements.txt
+  pip install --upgrade -r requirements.txt
 
 ENTRYPOINT ["node", "/repository/lib/main.js"]
