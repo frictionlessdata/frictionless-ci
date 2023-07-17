@@ -60,3 +60,4 @@ dist/
 site/
 tmp/
 .vim
+!**/*.html
