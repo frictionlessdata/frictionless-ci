@@ -1,1 +1,1 @@
-frictionless[csv,excel,json]==5.15.1
+frictionless[csv,excel,json]==5.15.4
