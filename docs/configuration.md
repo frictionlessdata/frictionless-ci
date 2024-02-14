@@ -1,6 +1,6 @@
 # Configuration
 
-Frictionless Repository can work without any additional configuration. It will validate all the CSV, EXCEL and JSONL files it can find in your repository (respecting `.gitignore` file) or all the DATA PACKAGE and DATA RESOURCE descriptors if they present. Note that if data packges are found all other type of sources are ignored. The same for data resources if not data packages are found.
+Frictionless Repository can work without any additional configuration. It will validate all the CSV, EXCEL and JSONL files it can find in your repository (respecting `.gitignore` file) or all the DATA PACKAGE and DATA RESOURCE descriptors if they present. Note that if data packages are found all other type of sources are ignored. The same for data resources if no data packages are found.
 
 ## Search Patterns
 
